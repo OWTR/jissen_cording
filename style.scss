@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+body {
+  font-family:'Hiragino Kaku Gothic Pro',sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a, li {
+  text-decoration: none;
+  list-style: none;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ヘッダー部分 */
+header {
+  height: 80px;
+  background-color: #75ACE4;
+  width: 100%;
+}
+
+.header {
+  &__line {
+  display: flex;
+  justify-content: space-between;
+  }
+  &__list {
+  display: flex;
+  }
+  &__list a {
+  color: white;
+  font-size: 14px;
+  }
+  &__list1 {
+  padding-right: 41px;
+  }
+  &__list2 {
+  padding-right: 82px;
+  }
+  &__list3 {
+  padding-right: 43px;
+  }
+  &__list4 {
+  padding-right: 37px;
+  }
+  &__form a {
+  display: block;
+  color: white;
+  background-color: #EF5350;
+  border-radius: 14px;
+  font-size: 16px;
+  margin-right: 32px;
+  margin-top: 20px;
+  padding: 9px 21px;
+  }
+  &__form a:hover {
+    box-shadow : 0px 8px 8px #000000;
+  }
+  &__left {
+  margin-top: 10px;
+  margin-left: 80px;
+  }
+}
+nav {
+  margin-top: 25px;
+  position: relative;
+  left: 100px;
+}
+
+/* section1 */
+.section1 { 
+  &__wrapper { 
+  display: flex;
+  }
+  &__wrapper__left {
+  margin-top: 160px; 
+  margin-left: 160px;
+  width: 57%;
+  }
+  &__wrapper__right {
+  width: 43%;
+  }
+  &__contents h2 {
+    font-size: 40px;
+    font-weight: normal;
+  }
+  &__contents h3 {
+    font-size: 32px;
+    font-weight: normal;
+  }
+  &__form a {
+    color: white;
+    background-color: #EF5350;
+    border-radius: 20px;
+    font-size: 24px;
+    padding: 40px 128px 40px 84px;
+    display: inline-block;
+    margin-top: 25px;
+  }
+  &__form a:hover {
+    box-shadow : 0px 8px 8px #000000;
+  }
+  &__last {
+    margin-top: 30px;
+    line-height: 32px;
+  }
+}
+
+// section2
+.section2 {
+  width: 100%;
+
+  &__topMessage {
+    margin-top: 114px;
+  }
+  &__topMessage h3 {
+    font-size: 24px;
+    line-height: 40px;
+    font-weight: normal;
+    background:linear-gradient(transparent 50%, #AECFEF 0%);
+    width: 27%;
+    margin-left: 552px;
+    margin-bottom: 80px;
+  }
+  &__topMessage li {
+    border-bottom: 1px solid #1976D2;
+    font-size: 16px;
+    line-height: 32px;
+    padding: 17px 0;
+    text-align: center;
+    width: 40%;
+    margin-left: 434px;
+    display: inline-block
+}
+  &__lastMessage {
+    margin-top: 113px;
+    background-color: #62B5FE;
+    display: inline-block;
+  }
+
+}
+
+// @media screen and (max-width: 1440px) and (min-width: 896px) {
+// }
+
+// @media screen and (max-width: 896px) and (min-width: 375px) {
+// }
+
+// @media screen and (max-width: 375px) {
+// }
+
+// @media screen and (max-width: 320px) {
+// }
