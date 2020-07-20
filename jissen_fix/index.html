@@ -17,11 +17,11 @@
         </div>
         <nav>
           <ul class="header__list">
-              <li><a class="header__list1" href="#">ABCの強み</a></li>
-              <li><a class="header__list2" href="#">プログラミングを学ぶメリット</a></li>
-              <li><a class="header__list3" href="#">プラン紹介</a></li>
-              <li><a class="header__list4" href="#">お客様の声</a></li>
-              <li><a class="header__list5" href="#">Q&A</a></li>
+              <li><a href="#linkA" class="header__list1">ABCの強み</a></li>
+              <li><a href="#linkB" class="header__list2">プログラミングを学ぶメリット</a></li>
+              <li><a href="#linkC" class="header__list3">プラン紹介</a></li>
+              <li><a href="#linkD" class="header__list4">お客様の声</a></li>
+              <li><a href="#linkE" class="header__list5">Q&A</a></li>
           </ul>
         </nav>
         <div class="header__form">
@@ -32,16 +32,7 @@
   </header>
 
   <main>
-    <!-- <div class="contents-header"></div>
-
-    <button id="btn_open">表示</button>
-    <div id="modal">
-      <div id="modal_content">
-        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-        <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-        <button class="btn_close">閉じる</button>
-      </div>
-    </div> -->
+    <div class="contents-header"></div>
    
     <div class="section1">
       <div class="container">
@@ -91,6 +82,7 @@
       </div>
     </div>
 
+    <a name="linkA"></a>
     <div class="section4">
       <div class="container">
         <div class="section4__title">
@@ -165,6 +157,7 @@
       </div>
     </div>
 
+    <a name="linkB"></a>
     <div class="section6">
       <div class="container">
         <div class="section6__title">
@@ -209,6 +202,7 @@
       </div>
     </div>
 
+    <a name="linkC"></a>
     <div class="section7">
       <div class="container">
         <div class="section7__title">
@@ -276,6 +270,7 @@
       </div>
     </div>
 
+    <a name="linkD"></a>
     <div class="section8">
       <div class="container">
         <div class="section8__title">
@@ -343,6 +338,7 @@
       </div>
     </div>
 
+    <a name="linkE"></a>
     <div class="section9">
       <div class="container">
         <div class="section9__title">
@@ -450,11 +446,84 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="script.js"></script>
 
+  <!-- 追従ボタン -->
   <div class="following">
     <div class="following__content">      
       <a href="#contact__form" class="following__btn">無料相談受付中！</a>
-      <div class="following__border"></div>
+      <div class="following__border">
+      </div>
     </div>   
   </div>
+
+  <!-- モーダル（非表示） -->
+  <!-- モーダル表示ボタン -->
+  <div class="content">
+    <a class="js-modal-open" href="">?modal=show</a>
+  </div>
+  <!-- モーダル中身 -->
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+      <div class="modal__content">
+        <div class="modal__logo">
+          <img src="img/modal_logo.svg" alt="">
+        </div>
+        <div class="modal__contens3">
+          <div class="modal__contens-inner">
+            <div class="modal__contents-top">
+              <p>　ポイント１</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div class="modal__contens-inner2">
+            <div class="modal__contents-top">
+              <p>　ポイント２</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div class="modal__contens-inner">
+            <div class="modal__contents-top">
+              <p>　ポイント３</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+        </div>            
+        <div class="modal__form">
+          <a href="#">無料相談・お申込みはこちら</a>
+        </div>
+        <a class="js-modal-close" href=""><i class="fas fa-times"></i></a>
+      </div><!--modal__inner-->
+  </div><!--modal-->
+  <!-- ここまで -->
+
 </body>
 </html>

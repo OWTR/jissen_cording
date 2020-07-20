@@ -33,16 +33,18 @@ $(function() {
 });
 
 // ページ内リンク移動
-$('a[href^="#"]').click(function() {
-  // スクロールの速度
-  var speed = 400; // ミリ秒で記述
-  var href = $(this).attr("href");
-  var target = $(href == "#" || href == "" ? 'html' : href);
-  var position = target.offset().top;
-  $('body,html').animate({
-    scrollTop: position
-  }, speed, 'swing');
-  return false;
+$(function(){
+  $('a[href^="#"]').click(function(){
+    var speed = 400;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    //ヘッダーの高さを取得
+    var header = $('header').height();
+    //ヘッダーの高さを引く
+    var position = target.offset().top - header;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
 });
 
 // タブ切り替え
@@ -58,20 +60,20 @@ $(function(){
   });
 });
 
-// // モーダル
-// $(function(){
-//   var modal = $('#modal'),
-//         modalContent = $('#modal_content'),
-//         btnOpen = $("#btn_open"),
-//         btnClose = $(".btn_close");
- 
-//   $(btnOpen).on('click', function() {
-//     modal.show();
-//   });
- 
-//   $(modal).on('click', function(event) {
-//     if(!($(event.target).closest(modalContent).length)||($(event.target).closest(btnClose).length)){
-//       modal.hide();
-//     }
-//   });
-// });
+// モーダル
+$(function(){
+  $('.js-modal-open').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
+  });
+  $('.js-modal-close').on('click',function(){
+      $('.js-modal').fadeOut();
+      return false;
+  });
+});
+
+// パラメータ取得
+var params = (new URL(document.location)).searchParams;
+var modal = params.get('modal');
+console.log('modal :', modal);
+  /// => modal : show
