@@ -54,8 +54,7 @@ a, li {
   background-color: #EF5350;
   border-radius: 14px;
   font-size: 24px;
-  padding: 27px 0 27px 84px;
-  
+  padding: 27px 0 27px 84px; 
 }
 .modal__form {
   margin: 0 auto;
@@ -175,12 +174,161 @@ header {
   margin-top: 10px;
   margin-left: 80px;
   }
+  &__nav-pc {
+    margin-top: 25px;
+    position: relative;
+    left: 130px;
+  }
+  &__menu-sp {
+    display: none;
+  }
 }
-nav {
-  margin-top: 25px;
-  position: relative;
-  left: 130px;
+// ヘッダーメディアクエリ
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+  .header__nav-pc {
+    white-space: nowrap;
+  }
 }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  .header__form a {
+    font-size: 14px;
+    white-space: nowrap;
+    }
+    .header__left img {
+      width: 90%;
+    }
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+  .container {
+    width: 100%;
+  }
+  .header__form a {
+    font-size: 10px;
+    white-space: nowrap;
+    }
+    .header__left img {
+      width: 80%;
+    }
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .header {
+    &__list, &__form {
+      display: none;
+    }
+    &__left {
+      margin-left: 29px;
+      margin-top: 4px;
+    }
+    &__menu-sp {
+      display: block;
+    }
+    &__line {
+      height: 40px;
+    }
+    &__left img {
+      width: 73px;
+      height: 31px;
+    }
+  }
+  
+  .global-nav {
+    position: fixed;
+    right: -395px; /* これで隠れる */
+    top: 0;
+    width: 375px; /* スマホに収まるくらい */
+    height: 100vh;
+    background-color: #B4D8F8;
+    transition: all .6s;
+    // z-index: 200;
+  }
+  .hamburger {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
+    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
+    cursor: pointer;
+    // z-index: 300;
+  }
+  .global-header {
+    background-color: #75ACE4;
+  }
+  .global-header img {
+    width: 75px;
+    height: 31px;
+    margin-left: 27px;
+    margin-top: 5px;
+  }
+  .global-nav__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .global-nav__item, .global-nav__item1 {
+    text-align: center;
+    padding: 0 14px;
+  }
+  .global-nav__item a, .global-nav__item1 a {
+    display: block;
+    padding: 20px 0;
+    text-decoration: none;
+    color: #0086FC;
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .global-nav__item1 a {
+    padding-top: 50px;
+  }
+  .global-nav__item a:hover, .global-nav__item1 a:hover {
+    color: red;
+  }
+  .hamburger__line {
+    position: absolute;
+    left: 11px;
+    width: 18px;
+    height: 1px;
+    background-color: white;
+    transition: all .6s;
+  }
+  .hamburger__line--1 {
+    top: 14px;
+  }
+  .hamburger__line--2 {
+    top: 20px;
+  }
+  .hamburger__line--3 {
+    top: 26px;
+  }
+  /* 表示された時用のCSS */
+  .nav-open .global-nav {
+    right: 0;
+  }
+  .nav-open {
+    opacity: .8;
+    visibility: visible;
+  }
+  .nav-open .hamburger__line--1 {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+  .nav-open .hamburger__line--2 {
+    width: 0;
+    left: 50%;
+  }
+  .nav-open .hamburger__line--3 {
+    transform: rotate(-45deg);
+    top: 20px;
+  }
+}
+
+
+
 // ヘッダー固定幅調節
 .contents-header {
   padding-top: 80px;
@@ -274,6 +422,19 @@ nav {
     line-height: 32px;
   }
 }
+// section1メディアクエリ
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (min-width: 320px) {
+}
+
 // section2
 .section2 {
   width: 100%;
@@ -897,15 +1058,3 @@ footer {
     padding: 22px 0 26px 0;
   }
 }
-
-// @media screen and (max-width: 1440px) and (min-width: 896px) {
-// }
-
-// @media screen and (max-width: 896px) and (min-width: 375px) {
-// }
-
-// @media screen and (max-width: 375px) {
-// }
-
-// @media screen and (max-width: 320px) {
-// }

@@ -77,3 +77,17 @@ var params = (new URL(document.location)).searchParams;
 var modal = params.get('modal');
 console.log('modal :', modal);
   /// => modal : show
+
+// ハンバーガーメニュー
+function toggleNav() {
+  var body = document.body;
+  var hamburger = document.getElementById('js-hamburger');
+  
+  hamburger.addEventListener('click', function() {
+    body.classList.toggle('nav-open');
+  });
+  blackBg.addEventListener('click', function() {
+    body.classList.remove('nav-open');
+  });
+}
+toggleNav();
