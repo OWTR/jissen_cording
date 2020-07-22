@@ -137,12 +137,14 @@ header {
   justify-content: space-between;
   height: 80px;
   }
-  &__list {
+  &__right, &__list-left, &__list-right {
   display: flex;
   }
-  &__list a {
+  &__list-left, &__list-right {
+    padding-top: 25px;
+  }
+  &__right a {
   color: white;
-  // フォントサイズ本来は24px
   font-size: 14px; 
   }
   &__list1 {
@@ -157,14 +159,18 @@ header {
   &__list4 {
   padding-right: 37px;
   }
+  &__list5 {
+    padding-right: 33px;
+  }
+  &__form {
+    padding: 20px 32px 0 0;
+  }
   &__form a {
   display: block;
   color: white;
   background-color: #EF5350;
   border-radius: 14px;
   font-size: 16px;
-  margin-right: 32px;
-  margin-top: 20px;
   padding: 9px 21px;
   }
   &__form a:hover {
@@ -174,51 +180,23 @@ header {
   margin-top: 10px;
   margin-left: 80px;
   }
-  &__nav-pc {
-    margin-top: 25px;
-    position: relative;
-    left: 130px;
-  }
   &__menu-sp {
     display: none;
   }
 }
-// ヘッダーメディアクエリ
-@media screen and (max-width: 1440px) and (min-width: 1024px) {
-  .container {
-    width: 100%;
-  }
-  .header__nav-pc {
-    white-space: nowrap;
-  }
-}
-@media screen and (max-width: 1024px) and (min-width: 768px) {
-  .container {
-    width: 100%;
-  }
-  .header__form a {
-    font-size: 14px;
-    white-space: nowrap;
-    }
-    .header__left img {
-      width: 90%;
-    }
-}
-@media screen and (max-width: 768px) and (min-width: 375px) {
-  .container {
-    width: 100%;
-  }
-  .header__form a {
-    font-size: 10px;
-    white-space: nowrap;
-    }
-    .header__left img {
-      width: 80%;
-    }
-}
+// // ヘッダーメディアクエリ
+// @media screen and (max-width: 1440px) and (min-width: 1024px) {
+// }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
 @media screen and (max-width: 375px) and (min-width: 320px) {
+  .container {
+    width: 375px;
+  }
   .header {
-    &__list, &__form {
+    &__right {
       display: none;
     }
     &__left {
@@ -232,101 +210,118 @@ header {
       height: 40px;
     }
     &__left img {
-      width: 73px;
-      height: 31px;
+      width: 64px;
+      height: 27px;
     }
   }
+}
   
-  .global-nav {
-    position: fixed;
-    right: -395px; /* これで隠れる */
-    top: 0;
-    width: 375px; /* スマホに収まるくらい */
-    height: 100vh;
-    background-color: #B4D8F8;
-    transition: all .6s;
-    // z-index: 200;
-  }
-  .hamburger {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 40px; /* クリックしやすいようにちゃんと幅を指定する */
-    height: 40px; /* クリックしやすいようにちゃんと高さを指定する */
-    cursor: pointer;
-    // z-index: 300;
-  }
-  .global-header {
-    background-color: #75ACE4;
-  }
-  .global-header img {
-    width: 75px;
-    height: 31px;
-    margin-left: 27px;
-    margin-top: 5px;
-  }
-  .global-nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .global-nav__item, .global-nav__item1 {
-    text-align: center;
-    padding: 0 14px;
-  }
-  .global-nav__item a, .global-nav__item1 a {
-    display: block;
-    padding: 20px 0;
-    text-decoration: none;
-    color: #0086FC;
-    font-size: 18px;
-    line-height: 32px;
-  }
-  .global-nav__item1 a {
-    padding-top: 50px;
-  }
-  .global-nav__item a:hover, .global-nav__item1 a:hover {
-    color: red;
-  }
-  .hamburger__line {
-    position: absolute;
-    left: 11px;
-    width: 18px;
-    height: 1px;
-    background-color: white;
-    transition: all .6s;
-  }
-  .hamburger__line--1 {
-    top: 14px;
-  }
-  .hamburger__line--2 {
-    top: 20px;
-  }
-  .hamburger__line--3 {
-    top: 26px;
-  }
-  /* 表示された時用のCSS */
-  .nav-open .global-nav {
-    right: 0;
-  }
-  .nav-open {
-    opacity: .8;
-    visibility: visible;
-  }
-  .nav-open .hamburger__line--1 {
-    transform: rotate(45deg);
-    top: 20px;
-  }
-  .nav-open .hamburger__line--2 {
-    width: 0;
-    left: 50%;
-  }
-  .nav-open .hamburger__line--3 {
-    transform: rotate(-45deg);
-    top: 20px;
-  }
+  // ハンバーガーメニュー
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 33;
+  right : 13px;
+  top   : 3px;
+  width : 40px;
+  height: 40px;
+  cursor: pointer;
+  // text-align: center;
+}
+.hamburger span {
+  display : block;
+  position: absolute;
+  width   : 24px;
+  height  : 2px ;
+  left    : 6px;
+  background : white;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition   : 0.3s ease-in-out;
+  transition        : 0.3s ease-in-out;
+}
+.hamburger span:nth-child(1) {
+  top: 8px;
+}
+.hamburger span:nth-child(2) {
+  top: 16px;
+}
+.hamburger span:nth-child(3) {
+  top: 24px;
 }
 
+/* ナビ開いてる時のボタン */
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 22;
+  top  : 0;
+  left : 0;
+  color: #0086FC;
+  transform: translateY(-100%);
+  transition: all 0.6s;
+  width: 100%;
+}
+
+nav.globalMenuSp ul {
+  background: #B4D8F8;
+  height: 385px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color: #0086FC;
+  padding: 20px 0;
+  text-decoration :none;
+}
+.globalMenuSp__header1 a {
+  padding-top: 50px !important;
+}
+nav.globalMenuSp ul li a:hover {
+  color: #E8663B;
+}
+.globalMenuSp__header img {
+  width: 64px;
+  height: 27px;
+  margin: 5px 0 0 27px;
+}
+.globalMenuSp__header {
+  background-color: #75ACE4;
+  height: 40px;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateY(0%);
+}
 
 
 // ヘッダー固定幅調節
@@ -386,17 +381,20 @@ header {
 .section1 { 
   width: 100%;
 
+  &__wrapper__right-sp {
+    display: none;
+  }
   &__wrapper { 
     display: flex;
   }
   &__wrapper__left {
     margin-top: 160px; 
     margin-left: 160px;
-    width: 57%;
   }
   &__wrapper__right {
-    width: 43%;
+    margin-left: auto;
   }
+
   &__contents h2 {
     font-size: 40px;
     font-weight: normal;
@@ -422,18 +420,67 @@ header {
     line-height: 32px;
   }
 }
-// section1メディアクエリ
-@media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 375px) {
-}
-
-@media screen and (min-width: 320px) {
-}
+// @media screen and (max-width: 1440px) and (min-width: 1024px) {
+// }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .contents-header {
+    padding-top: 40px;
+  }
+  .container {
+    width: 375px;
+  }
+  .section1 { 
+    &__wrapper { 
+      flex-direction: column-reverse;
+    }
+    &__wrapper__right {
+      display: none;
+    }
+    &__wrapper__right-sp {
+      display: block;
+    }
+    &__wrapper__left {
+      width: 100%;
+      margin: 0 auto;
+      }
+      &__wrapper { 
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__contents h2 {
+        font-size: 25px;
+        line-height: 39px;
+      }
+      &__contents h3 {
+        font-size: 21px;
+        padding: 30px 0 14px 0;
+      }
+      &__form a {
+        white-space: nowrap;
+        font-size: 15px;
+        padding: 25px 82px 25px 53px;
+        margin-top: 0;
+        width: 100%;
+      }
+      &__form {
+        padding-top: 18px;
+        margin: 0 15px;
+      }
+      &__last p {
+        font-size: 10px;
+        line-height: 14px;  
+      }
+      &__last {
+        text-align: left; 
+        margin-left: 53px;
+      }
+  }
+}  
 
 // section2
 .section2 {
@@ -461,6 +508,32 @@ header {
     margin-left: 434px;
   }
 }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }  
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section2 {
+    &__topMessage {
+      margin-top: 62px;
+    }
+    &__topMessage h3 {
+      white-space: nowrap;
+      font-size: 21px;
+      line-height: 35px;
+      width: 78%;
+      margin: 0 auto;
+      margin-bottom: 29px;
+    }
+    &__topMessage li {
+      font-size: 14px;
+      line-height: 29px;
+      margin: 0 auto;
+      width: 92%;
+      padding: 15px 0;
+    }
+  }
+}
 // section3
 .section3 {
   width: 100%;
@@ -477,6 +550,23 @@ header {
     font-weight: normal;
   }
 }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section3 {
+    &__commonBox {
+      margin-top: 56px;
+      padding: 18px 0 15px 18px;
+    }
+    &__commonBox h1 {
+      font-size: 17px;
+      line-height: 31px;
+    }
+  }
+}
+
 // section4
 .section4 {
   width: 100%;
@@ -532,6 +622,62 @@ header {
     line-height: 32px;
   }
 }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section4 {
+    &__title {
+      margin-top: 58px;margin-left: 28px;
+    }
+    &__title h1, h2 {
+      font-size: 21px;
+      line-height: 35px;
+      white-space: nowrap;
+      width: 90%;
+   }
+    &__title h1 {
+      width: 67%;
+    }
+    &__title h2 {
+      width: 80%;
+    }
+    &__title__contents {
+      margin: 64px 168px 112px 168px;
+      text-align: center;
+    }
+    &__title__contents01 {
+      display: flex;
+      text-align: left;   
+      align-items: center;
+    }
+    &__title__contents02 {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 48px 0;
+      text-align: left;
+      align-items: center;
+    }
+    &__title__coment01 {
+      margin-left: 70px;
+    }
+    &__title__coment02 {
+      margin-right: 70px;
+    }
+    &__title__Top h3 {
+      font-weight: normal;
+      font-size: 24px;  
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    &__title__Text, &__title__Text02 {
+      font-size: 16px;  
+      line-height: 32px;
+    }
+  }
+}
+
 // section5
 .section5 {
   width: 100%;
@@ -579,6 +725,12 @@ header {
     box-shadow : 0px 8px 8px #878787;
   }
 }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 // section6
 .section6 {
   width: 100%;
@@ -614,6 +766,12 @@ header {
     width: 47%;
   }
 }
+// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// }
+// @media screen and (max-width: 768px) and (min-width: 375px) {
+// }
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 // section7
 .section7 {
   width: 100%;
@@ -622,7 +780,7 @@ header {
   &__title {
     text-align: center;
     padding-top: 112px;
-    max-width: 1200px;
+    width: 1200px;
     margin: 0 auto;
     margin-top: 71px;
   }
@@ -686,6 +844,12 @@ header {
     padding: 18px 0 17px 0;
   } 
 }  
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 // section8
 .section8 {
   width: 100%;
@@ -744,6 +908,12 @@ header {
     line-height: 24px;
     text-align: left;
   }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
 }
 // タブ設定
 .tab-group {
@@ -864,6 +1034,12 @@ header {
     border: 1px solid #C8CCD0;
   }
 } 
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 // section10
 .section10 {
   width: 100%;
@@ -997,6 +1173,12 @@ header {
     outline: none;
   }
 }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 ::placeholder {
   padding-top: 14px;
   padding-left: 17px;
@@ -1044,6 +1226,12 @@ header {
   }
 
 }
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+}
 // footer
 footer {
   width: 100%;
@@ -1057,4 +1245,10 @@ footer {
     line-height: 53px;
     padding: 22px 0 26px 0;
   }
+}
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+}
+@media screen and (max-width: 768px) and (min-width: 375px) {
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
 }

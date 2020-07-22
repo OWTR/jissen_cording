@@ -79,15 +79,14 @@ console.log('modal :', modal);
   /// => modal : show
 
 // ハンバーガーメニュー
-function toggleNav() {
-  var body = document.body;
-  var hamburger = document.getElementById('js-hamburger');
-  
-  hamburger.addEventListener('click', function() {
-    body.classList.toggle('nav-open');
+$(function() {
+  $('.hamburger').click(function() {
+      $(this).toggleClass('active');
+
+      if ($(this).hasClass('active')) {
+          $('.globalMenuSp').addClass('active');
+      } else {
+          $('.globalMenuSp').removeClass('active');
+      }
   });
-  blackBg.addEventListener('click', function() {
-    body.classList.remove('nav-open');
-  });
-}
-toggleNav();
+});
