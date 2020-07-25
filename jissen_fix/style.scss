@@ -14,10 +14,10 @@ a, li {
   list-style: none;
 }
 .container {
-  width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
 }
-.sp { 
+.br-sp { 
   display: none; 
 }
 
@@ -148,7 +148,7 @@ header {
   }
   &__right a {
   color: white;
-  font-size: 14px; 
+  font-size: 0.972vw; 
   }
   &__list1 {
   padding-right: 41px;
@@ -173,7 +173,7 @@ header {
   color: white;
   background-color: #EF5350;
   border-radius: 14px;
-  font-size: 16px;
+  font-size: 1.111vw;
   padding: 9px 21px;
   }
   &__form a:hover {
@@ -188,16 +188,155 @@ header {
   }
 }
 // // ヘッダーメディアクエリ
-// @media screen and (max-width: 1440px) and (min-width: 1024px) {
-// }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .header {
+  &__form {
+    width: 30%;
+    white-space: nowrap;
+  }
+  &__right {
+    white-space: nowrap;
+  }
+  &__list1 {
+  padding-right: 21px;
+  }
+  &__list2 {
+  padding-right: 42px;
+  }
+  &__list3 {
+  padding-right: 23px;
+  }
+  &__list4 {
+  padding-right: 17px;
+  }
+  &__list5 {
+    padding-right: 23px;
+  }
+ }
+}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+  .header {
+    &__left img {
+      width: 80%;
+    }
+    &__form {
+      display: none;
+    }
+    &__right {
+      display: none;
+    }
+    &__menu-sp {
+      display: block;
+    }
+  }
+   // ハンバーガーメニュー
+  .hamburger {
+    display : block;
+    position: fixed;
+    z-index : 33;
+    right : 50px;
+    top   : 15px;
+    width : 40px;
+    height: 40px;
+    cursor: pointer;
+    // text-align: center;
+  }
+  .hamburger span {
+    display : block;
+    position: absolute;
+    width   : 34px;
+    height  : 3px ;
+    left    : 6px;
+    background : white;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 20px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 30px;
+  }
+
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
+
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
+
+  nav.globalMenuSp {
+    position: fixed;
+    z-index : 22;
+    top  : 0;
+    left : 0;
+    color: #0086FC;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul {
+    background: #B4D8F8;
+    height: 385px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #0086FC;
+    padding: 20px 0;
+    text-decoration :none;
+  }
+  .globalMenuSp__header1 a {
+    padding-top: 50px !important;
+  }
+  nav.globalMenuSp ul li a:hover {
+    color: #E8663B;
+  }
+  .globalMenuSp__header img {
+    width: 106px;
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+  .globalMenuSp__header {
+    background-color: #75ACE4;
+    height: 80px;
+  }
+
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    transform: translateY(0%);
+  }
+}
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  // .container {
-  //   width: 375px;
-  // }
   .header {
     &__right {
       display: none;
@@ -217,115 +356,113 @@ header {
       height: 27px;
     }
   }
-}
-  
-  // ハンバーガーメニュー
-.hamburger {
-  display : block;
-  position: fixed;
-  z-index : 33;
-  right : 13px;
-  top   : 3px;
-  width : 40px;
-  height: 40px;
-  cursor: pointer;
-  // text-align: center;
-}
-.hamburger span {
-  display : block;
-  position: absolute;
-  width   : 24px;
-  height  : 2px ;
-  left    : 6px;
-  background : white;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition   : 0.3s ease-in-out;
-  transition        : 0.3s ease-in-out;
-}
-.hamburger span:nth-child(1) {
-  top: 8px;
-}
-.hamburger span:nth-child(2) {
-  top: 16px;
-}
-.hamburger span:nth-child(3) {
-  top: 24px;
-}
+   // ハンバーガーメニュー
+  .hamburger {
+    display : block;
+    position: fixed;
+    z-index : 33;
+    right : 13px;
+    top   : 3px;
+    width : 40px;
+    height: 40px;
+    cursor: pointer;
+    // text-align: center;
+  }
+  .hamburger span {
+    display : block;
+    position: absolute;
+    width   : 24px;
+    height  : 2px ;
+    left    : 6px;
+    background : white;
+    -webkit-transition: 0.3s ease-in-out;
+    -moz-transition   : 0.3s ease-in-out;
+    transition        : 0.3s ease-in-out;
+  }
+  .hamburger span:nth-child(1) {
+    top: 8px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 16px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 24px;
+  }
 
-/* ナビ開いてる時のボタン */
-.hamburger.active span:nth-child(1) {
-  top : 16px;
-  left: 6px;
-  -webkit-transform: rotate(-45deg);
-  -moz-transform   : rotate(-45deg);
-  transform        : rotate(-45deg);
-}
+  /* ナビ開いてる時のボタン */
+  .hamburger.active span:nth-child(1) {
+    top : 16px;
+    left: 6px;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform   : rotate(-45deg);
+    transform        : rotate(-45deg);
+  }
 
-.hamburger.active span:nth-child(2),
-.hamburger.active span:nth-child(3) {
-  top: 16px;
-  -webkit-transform: rotate(45deg);
-  -moz-transform   : rotate(45deg);
-  transform        : rotate(45deg);
-}
+  .hamburger.active span:nth-child(2),
+  .hamburger.active span:nth-child(3) {
+    top: 16px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform   : rotate(45deg);
+    transform        : rotate(45deg);
+  }
 
-nav.globalMenuSp {
-  position: fixed;
-  z-index : 22;
-  top  : 0;
-  left : 0;
-  color: #0086FC;
-  transform: translateY(-100%);
-  transition: all 0.6s;
-  width: 100%;
-}
+  nav.globalMenuSp {
+    position: fixed;
+    z-index : 22;
+    top  : 0;
+    left : 0;
+    color: #0086FC;
+    transform: translateY(-100%);
+    transition: all 0.6s;
+    width: 100%;
+  }
 
-nav.globalMenuSp ul {
-  background: #B4D8F8;
-  height: 385px;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-}
+  nav.globalMenuSp ul {
+    background: #B4D8F8;
+    height: 385px;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
+  }
 
-nav.globalMenuSp ul li {
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-}
-nav.globalMenuSp ul li:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
+  nav.globalMenuSp ul li {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+  }
+  nav.globalMenuSp ul li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
 
-nav.globalMenuSp ul li a {
-  display: block;
-  color: #0086FC;
-  padding: 20px 0;
-  text-decoration :none;
-}
-.globalMenuSp__header1 a {
-  padding-top: 50px !important;
-}
-nav.globalMenuSp ul li a:hover {
-  color: #E8663B;
-}
-.globalMenuSp__header img {
-  width: 64px;
-  height: 27px;
-  margin: 5px 0 0 27px;
-}
-.globalMenuSp__header {
-  background-color: #75ACE4;
-  height: 40px;
-}
+  nav.globalMenuSp ul li a {
+    display: block;
+    color: #0086FC;
+    padding: 20px 0;
+    text-decoration :none;
+  }
+  .globalMenuSp__header1 a {
+    padding-top: 50px !important;
+  }
+  nav.globalMenuSp ul li a:hover {
+    color: #E8663B;
+  }
+  .globalMenuSp__header img {
+    width: 64px;
+    height: 27px;
+    margin: 5px 0 0 27px;
+  }
+  .globalMenuSp__header {
+    background-color: #75ACE4;
+    height: 40px;
+  }
 
-/* このクラスを、jQueryで付与・削除する */
-nav.globalMenuSp.active {
-  transform: translateY(0%);
+  /* このクラスを、jQueryで付与・削除する */
+  nav.globalMenuSp.active {
+    transform: translateY(0%);
+  }
 }
-
 
 // ヘッダー固定幅調節
 .contents-header {
@@ -391,50 +528,129 @@ nav.globalMenuSp.active {
     display: flex;
   }
   &__wrapper__left {
-    margin-top: 160px; 
-    margin-left: 160px;
+    margin: 160px 160px 73px 160px; 
   }
   &__wrapper__right {
     margin-left: auto;
   }
-
+  &__wrapper__right img {
+    max-width: 100%;
+  }
   &__contents h2 {
-    font-size: 40px;
+    font-size: 2.77vw;
     font-weight: normal;
+    white-space: nowrap;
   }
   &__contents h3 {
-    font-size: 32px;
+    font-size: 2.22vw;
     font-weight: normal;
+    white-space: nowrap;
   }
   &__form a {
+    white-space: nowrap;
     color: white;
     background-color: #EF5350;
     border-radius: 20px;
-    font-size: 24px;
+    font-size: 1.66vw;
     padding: 40px 128px 40px 84px;
     display: inline-block;
     margin-top: 25px;
   }
+  
   &__form a:hover {
     box-shadow : 0px 8px 8px #878787;
   }
   &__last {
     margin-top: 30px;
     line-height: 32px;
+    white-space: nowrap;
+  }
+  &__last p {
+    font-size: 1.11vw;
+    line-height: 32px; 
   }
 }
-// @media screen and (max-width: 1440px) and (min-width: 1024px) {
-// }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section1 {
+    &__wrapper__left {
+      margin: 70px 100px 0px 100px; 
+    }
+    &__form a {
+    padding: 32px 102px 32px 67px;
+    }
+  }
+}
+// バランス考慮で追加
+@media screen and (max-width: 959px) and (min-width: 640px) {
+  .section1 { 
+    &__wrapper__left {
+      margin: 60px; 
+    }
+    &__wrapper__right {
+      margin: 0 auto;
+    }
+    &__wrapper__right img {
+      max-width: 100%;
+    }
+    &__form a {
+      padding: 20px 30px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    &__last p {
+      line-height: 25px; 
+    }
+  }
+}
+// バランス考慮で追加
+@media screen and (max-width: 640px) and (min-width: 375px) {
+  .section1 { 
+    &__wrapper { 
+      flex-direction: column-reverse;
+    }
+    &__wrapper__right {
+      display: none;
+    }
+    &__wrapper__right-sp {
+      display: block;
+    }
+    &__wrapper__left {
+      margin: 0 auto;
+      text-align: left;
+      }
+      &__wrapper { 
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      &__contents h2 {
+        font-size: 25px;
+        line-height: 39px;
+      }
+      &__contents h3 {
+        font-size: 21px;
+        padding: 30px 0 14px 0;
+      }
+      &__form a {
+        white-space: nowrap;
+        font-size: 15px;
+        padding: 20px;
+        margin-top: 0;
+        width: 70%;
+      }
+      &__form {
+        padding-top: 18px;
+        text-align: center;
+      }
+      &__last p {
+        font-size: 12px;
+        line-height: 32px;  
+      }
+  }
+}
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .contents-header {
     padding-top: 40px;
-  }
-  .container {
-    width: 375px;
   }
   .section1 { 
     &__wrapper { 
@@ -500,6 +716,7 @@ nav.globalMenuSp.active {
     width: 27%;
     margin-left: 552px;
     margin-bottom: 67px;
+    white-space: nowrap;
   }
   &__topMessage li {
     border-bottom: 1px solid #1976D2;
@@ -509,12 +726,48 @@ nav.globalMenuSp.active {
     text-align: center;
     width: 40%;
     margin-left: 434px;
+    white-space: nowrap;
   }
 }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }  
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section2 { 
+    &__topMessage h3 {
+      font-size: 24px;
+      line-height: 40px;
+      margin: 0 auto;
+      margin-bottom: 67px;
+      width: 340px;
+    }
+    &__topMessage li {
+      font-size: 16px;
+      line-height: 32px;
+      padding: 17px 0;
+      margin: 0 auto;
+      width: 380px;
+    } 
+  }
+}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+  .section2 { 
+    &__topMessage {
+      margin-top: 62px;
+    }
+    &__topMessage h3 {
+      font-size: 20px;
+      line-height: 40px;
+      margin: 0 auto;
+      margin-bottom: 17px;
+      width: 340px;
+    }
+    &__topMessage li {
+      font-size: 14px;
+      line-height: 32px;
+      padding: 17px 0;
+      margin: 0 auto;
+      width: 370px;
+    } 
+  }
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .section2 {
     &__topMessage {
@@ -547,16 +800,38 @@ nav.globalMenuSp.active {
   &__commonBox {
     margin-top: 112px;
     padding: 53px 0 51px 231px;
+    max-width: 100%;
   }
   &__commonBox h1 {
     font-size: 48px;
     font-weight: normal;
+    white-space: nowrap;
+    max-width: 100%;
   }
 }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section3 {
+    &__commonBox {
+      padding: 53px 0 51px 131px;
+    }
+    &__commonBox h1 {
+      font-size: 35px;
+    }
+  }
+}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+  .section3 {
+    &__commonBox {
+      padding: 20px 0;
+      margin-top: 62px;
+      text-align: center;
+      width: 100%;
+    }
+    &__commonBox h1 {
+      font-size: 3.6vw;
+    }
+  }
+}
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .section3 {
     &__commonBox {
@@ -579,12 +854,13 @@ nav.globalMenuSp.active {
     margin-top: 112px;
   }
   &__title h1, h2 {
-    font-size: 56px;
+    font-size: 3.88vw;
     line-height: 72px;
     font-weight: normal;
     background:linear-gradient(transparent 50%, #FED8A6 0%);
     text-align: center;
     display: inline-block;
+    white-space: nowrap;
   }
   &__title h1 {
     width: 67%;
@@ -624,25 +900,64 @@ nav.globalMenuSp.active {
     font-size: 16px;  
     line-height: 32px;
   }
+  &__title__Img01 img, &__title__Img02 img, &__title__Img03 img {
+    max-width: auto;
+  }
 }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
-@media screen and (max-width: 375px) and (min-width: 320px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section4 {
+    &__title__contents {
+      margin: 64px 68px 112px 68px;
+      text-align: center;
+    }
+    &__title__contents01 {
+      display: flex;
+      text-align: left;   
+      align-items: center;
+    }
+    &__title__contents02 {
+      display: flex;
+      flex-direction: row-reverse;
+      margin: 48px 0;
+      text-align: left;
+      align-items: center;
+    }
+    &__title__coment01 {
+      margin-left: 70px;
+    }
+    &__title__coment02 {
+      margin-right: 70px;
+    }
+    &__title__Top h3 {
+      font-weight: normal;
+      font-size: 24px;  
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    &__title__Text, &__title__Text02 {
+      font-size: 16px;  
+      line-height: 32px;
+    }
+    &__title__Img01 img, &__title__Img02 img, &__title__Img03 img {
+      max-width: auto;
+    }
+  }
+}
+@media screen and (max-width: 959px) and (min-width: 375px) {
   .section4 {
     &__title {
       margin: 59px 0;
     }
     &__title h1, h2 {
-      font-size: 16px;
+      font-size: 3.88vw;
       // 本来は21px
-      line-height: 35px;
+      line-height: 55px;
       white-space: nowrap;
       text-align: left;
     }
     &__title__contents {
-      margin: 0;
+      margin: 0 30px;
+      margin-bottom: 62px;
       text-align: left;
     }
     &__title__contents01, &__title__contents02 {
@@ -666,7 +981,47 @@ nav.globalMenuSp.active {
     }
     &__title__Img01 img, &__title__Img02 img, &__title__Img03 img {
       width: 100%;
+    }
+  }
+}  
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section4 {
+    &__title {
+      margin: 59px 0;
+    }
+    &__title h1, h2 {
+      font-size: 16px;
+      // 本来は21px
+      line-height: 35px;
+      white-space: nowrap;
+      text-align: left;
+    }
+    &__title__contents {
       margin: 0 15px;
+      margin-bottom: 62px;
+      text-align: left;
+    }
+    &__title__contents01, &__title__contents02 {
+      display: block;
+    }
+    &__title__coment01, &__title__coment02 {
+      margin-left: 0px;
+    }
+    &__title__coment02 {
+      margin-right: 0px;
+    }
+    &__title__Top h3 {
+      font-size: 21px;  
+      line-height: 63px;
+      margin-left: 15px;
+    }
+    &__title__Text, &__title__Text02 {
+      font-size: 14px;  
+      line-height: 28px;
+      margin: 0 15px;
+    }
+    &__title__Img01 img, &__title__Img02 img, &__title__Img03 img {
+      width: 100%;
     }
   }
 }
@@ -691,6 +1046,7 @@ nav.globalMenuSp.active {
     line-height: 40px;
     font-weight: normal;
     padding-bottom: 16px;
+    white-space: nowrap;
   }
   &__form {
     width: 40%;
@@ -705,6 +1061,7 @@ nav.globalMenuSp.active {
     padding: 24px 206px 24px 80px;
     margin-bottom: 48px;
     position: relative;
+    white-space: nowrap;
   }
   &__form a::after {
     content: url(img/yajirushi.svg);
@@ -718,10 +1075,36 @@ nav.globalMenuSp.active {
     box-shadow : 0px 8px 8px #878787;
   }
 }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section5 {
+    &__form {
+      width: 45%;
+    }
+    &__form a {
+      padding: 24px 206px 24px 50px;
+    }
+  }
+}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+  .section5 {
+    &__form {
+      width: 350px;
+    }
+    &__commonBox p {
+      font-size: 12px;
+    }
+    &__commonBox h3 {
+      font-size: 20px;
+    }
+    &__form a {
+      padding: 24px 206px 24px 30px;
+      font-size: 20px;
+    }
+    &__form a::after {
+      bottom: 15%;
+    }
+  }
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .section5 {
     &__commonBox p {
@@ -736,18 +1119,19 @@ nav.globalMenuSp.active {
     }
     &__form {
       width: 100%;
-      margin: 0 15px;
+      margin-bottom: 28px;
     }
     &__form a {
-      font-size: 21px;
+      font-size: 19px;
       padding: 21px 0px 21px 43px;
       margin-bottom: 48px;
       text-align: left;
+      margin: 0 15px;
     }
     &__form a::after {
       content: url(img/yajirushi_sp.svg);
       right: 10%;
-      bottom: 18%;
+      bottom: 12%;
       width: 20px;
       height: 40px;
     }
@@ -765,13 +1149,14 @@ nav.globalMenuSp.active {
     text-align: center;
   }
   &__title h2 {
-    font-size: 56px;
+    font-size: 3.88vw;
     line-height: 72px;
     width: 68%;
     font-weight: normal;
     background:linear-gradient(transparent 60%, #FED8A6 0%);
     text-align: left;
     display: inline-block;
+    white-space: nowrap;
   }
   &__contents {
     display: flex;
@@ -791,37 +1176,36 @@ nav.globalMenuSp.active {
     width: 47%;
   }
 }
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
-// }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
-@media screen and (max-width: 375px) and (min-width: 320px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
+  .section6 {
+    &__contents {
+      margin: 0 0 48px 174px;
+    }
+  }
+}
+// 入りきらず追加
+@media screen and (max-width: 959px) and (min-width: 750px) {
+  .section6 {
+    &__title {
+      margin-top: 62px;
+    }
+    &__contents {
+      margin: 0 0 48px 124px;
+    }
+  }
+}  
+// 入りきらず追加
+@media screen and (max-width: 750px) and (min-width: 375px) {
   .section6 {  
-    &__title-sp {
-      display: block;
-      margin-left: 37px;
-      margin-top: 58px;
+    &__title h2 {
+      line-height: 42px;
     }
     &__title {
-      display: none;
-    }
-    &__title-sp h2 {
-      font-size: 21px;
-      line-height: 40px;
-      font-weight: normal;
-      width: 20%;
-      background:linear-gradient(transparent 60%, #FED8A6 0%);
-    }
-    &__title-sp h3 {
-      font-size: 21px;
-      line-height: 40px;
-      font-weight: normal;
-      width: 100%;
-      background:linear-gradient(transparent 60%, #FED8A6 0%);
+      margin-top: 62px;
     }
     &__contents {
       display: block;
-      margin: 0;
+      margin: 0 30px;
     }
     &__contents01 h3 {
       font-size: 21px;
@@ -836,7 +1220,59 @@ nav.globalMenuSp.active {
     }
     &__contents01 {
       width: 100%;
+    }
+    &__contents__png img {
+      width: 70%;
+    }
+    &__contents__png {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section6 {  
+    &__title-sp {
+      display: block;
+      margin-left: 37px;
+      margin-top: 58px;
+    }
+    &__title {
+      display: none;
+    }
+    &__title-sp h2 {
+      font-size: 18px;
+      line-height: 40px;
+      font-weight: normal;
+      width: 20%;
+      background:linear-gradient(transparent 60%, #FED8A6 0%);
+      white-space: nowrap;
+    }
+    &__title-sp h3 {
+      font-size: 18px;
+      line-height: 40px;
+      font-weight: normal;
+      width: 100%;
+      background:linear-gradient(transparent 60%, #FED8A6 0%);
+      white-space: nowrap;
+    }
+    &__contents {
+      display: block;
       margin: 0 15px;
+    }
+    &__contents01 h3 {
+      font-size: 21px;
+      line-height: 35px;
+      margin-bottom: 21px;
+      margin-top: 63px;
+    }
+    &__contents01 p {
+      font-size: 14px;
+      line-height: 28px;
+      margin-bottom: 35px;
+    }
+    &__contents01 {
+      width: 100%;
     }
     &__contents__png img {
       width: 100%;
@@ -895,36 +1331,37 @@ nav.globalMenuSp.active {
     font-size: 20px;
     line-height: 36px;
     background:linear-gradient(transparent 45%, #8FCAF9 0%);
-    width: 49%;
+    width: 180px;
     display: inline-block;
+    white-space: nowrap;
   }
   &__contents__discription {
     margin: 33px;
   }
   &__contents__discription p {
-    font-size: 16px;
+    font-size: 1.11vw;
     line-height: 32px;
   }  
   &__contents__list {
     margin: 33px; 
   }
   &__contents__list li {
-    font-size: 16px;
+    font-size: 1.11vw;
     line-height: 35px;
     border-bottom: 1px solid #707070;
     padding: 18px 0 17px 0;
+    white-space: nowrap;
   } 
 }  
-// @media screen and (max-width: 1024px) and (min-width: 768px) {
+// @media screen and (max-width: 1439px) and (min-width: 800px) {
 // }
-// @media screen and (max-width: 768px) and (min-width: 375px) {
-// }
-@media screen and (max-width: 375px) and (min-width: 320px) {
+// バランス考慮でwidth修正
+@media screen and (max-width: 800px) and (min-width: 375px) {
   .section7 {
     &__title {
       padding-top: 59px;
-      width: 100%;
-      margin: 0 15px;
+      width: 90%;
+      margin: 0 auto;
     }
     &__title h1 {
       font-size: 28px;
@@ -940,11 +1377,62 @@ nav.globalMenuSp.active {
     &__main {
       display: block;
       padding: 0;
+      padding-bottom: 62px;
+      margin: 0 15px;
+    }
+    &__contents1, &__contents2, &__contents3 {
+      width: 80%;
+      padding-bottom: 29px;
+      margin: 0 auto;
+    }
+    &__contents__title {
+      text-align: center;
+      padding-top: 30px;
+    }
+    &__contents__title p {
+      font-size: 17px;
+      line-height: 35px;
+      width: 130px;  
+    }
+    &__contents__discription p {
+      font-size: 14px;
+      line-height: 24px;
+    }  
+    &__contents__list li {
+      font-size: 14px;
+      line-height: 28px;
+      padding: 15px 0;
+    } 
+  }  
+} 
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .section7 {
+    &__title {
+      padding-top: 59px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    &__title h1 {
+      font-size: 28px;
+      line-height: 45px;
+      font-weight: normal;
+    }
+    &__title h1:before {
+      margin-right: 35px;
+    }
+    &__title h1:after {
+      margin-left: 56px;
+    }
+    &__main {
+      display: block;
+      padding: 0;
+      margin: 0 15px;
+      padding-bottom: 62px;
     }
     &__contents1, &__contents2, &__contents3 {
       width: 100%;
-      margin: 0 15px;
       padding-bottom: 29px;
+      margin: 0 auto;
     }
     &__contents__title {
       text-align: center;
@@ -970,6 +1458,26 @@ nav.globalMenuSp.active {
 .section8 {
   width: 100%;
 
+  &__tab {
+  display: flex;
+  justify-content: center;
+  }
+  &__tab li {
+    white-space: nowrap;
+    }
+  &__tab-no, &__tab-active {
+    margin: 69px 37px 50px 37px;
+    list-style: none;
+    color: #1976D2;
+    text-align: center;
+    cursor: pointer;
+  }
+  &__tab-active {
+  background: linear-gradient(transparent 50%, #FDC77F 0%);
+  }
+  &__slider {
+    display: none;
+  }
   &__title {
     text-align: center;
     padding-top: 112px;
@@ -999,7 +1507,7 @@ nav.globalMenuSp.active {
     display: flex;
     justify-content: center;
   }
-  &__main {
+  &__main11, &__main22, &__main33, &__main44 {
     width: 33%;
     background-color: #D7ECFD;
     margin: 16px;
@@ -1022,40 +1530,242 @@ nav.globalMenuSp.active {
     line-height: 24px;
     text-align: left;
   }
+  .dot {
+    border: none;
+  }
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+// @media screen and (max-width: 1439px) and (min-width: 959px) {
+// }
+@media screen and (max-width: 959px) and (min-width: 375px) {
+  .section8 {
+    &__title h1 {
+      font-size: 4.17vw;
+    }
+  &__main {
+    display: none;
+  }
+  &__main__contents-sp {
+    display: flex;
+    padding-top: 27px;
+  }
+  &__main__contents-sp p {
+    padding-top: 80px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: #006AD4;
+  }
+  &__main__contents__right-sp {
+    padding: 14px 0 30px 0;
+    text-align: left;
+  }
+  &__main__contents__right-sp p {
+    font-size: 11px;
+    line-height: 22px;
+  }
+  &__slider { 
+    background-color: #EBFAFF;
+    border: 1px solid #C5EFFF;
+    position:relative;
+    width: 315px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+  &__slider-list {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    padding-bottom: 390px;//widthに対する値。中身が全部absoluteなので、paddingで高さ
+    margin: 0 auto;
+  }
+  &__tab li {
+    margin: 37px auto;
+  }
 }
-@media screen and (max-width: 768px) and (min-width: 375px) {
-}
+  .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    &.current {
+      opacity: 1;
+    }
+  }
+  
+  .buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent center no-repeat;
+    cursor: pointer;
+    opacity: .4;
+    &.prev {
+      background-image: url(img/左ボタン.svg);
+    }
+    &.next {
+      background-image: url(img/右ボタン.svg);
+    }
+    &:hover {
+      opacity: .8;
+    }
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: #FEC28F;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity .4s ease-in-out;
+    &:nth-child(n+2){
+      margin-left: 5px;
+    }
+    &.current {
+      opacity: 1;
+    }
+  }
+  
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
+  .section8 {
+    &__title h1 {
+      font-size: 7.77vw;
+    }
+  &__main {
+    display: none;
+  }
+  &__main__contents-sp {
+    display: flex;
+    padding-top: 27px;
+  }
+  &__main__contents-sp p {
+    padding-top: 80px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: #006AD4;
+  }
+  &__main__contents__right-sp {
+    padding: 14px 0 30px 0;
+    text-align: left;
+  }
+  &__main__contents__right-sp p {
+    font-size: 11px;
+    line-height: 22px;
+  }
+  &__slider { 
+    background-color: #EBFAFF;
+    border: 1px solid #C5EFFF;
+    position:relative;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+  }
+  &__slider-list {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    padding-bottom: 390px;//widthに対する値。中身が全部absoluteなので、paddingで高さ
+    margin: 0 auto;
+  }
+  &__tab li {
+    margin: 37px auto;
+    font-size: 3.88vw;
+  }
 }
-// タブ設定
-.tab-group {
-  display: flex;
-  justify-content: center;
-}
-.tab {
-  margin: 69px 37px 50px 37px;
-  list-style: none;
-  color: #1976D2;
-  text-align: center;
-  cursor: pointer;
-}
-.panel {
-  display: none;
-}
-.tab.is-active {
-  background: linear-gradient(transparent 50%, #FDC77F 0%);
-  transition: all 0.2s ease-out;
-}
-.panel {
-  text-align: center;
-}
-.panel.is-show {
-  display: block;
-}
-.panel-group {
-  margin-bottom: 112px;
+  .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .6s ease-in-out;
+    &.current {
+      opacity: 1;
+    }
+  }
+  
+  .buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent center no-repeat;
+    cursor: pointer;
+    opacity: .4;
+    &.prev {
+      background-image: url(img/左ボタン.svg);
+    }
+    &.next {
+      background-image: url(img/右ボタン.svg);
+    }
+    &:hover {
+      opacity: .8;
+    }
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 0;
+    background: #FEC28F;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity .4s ease-in-out;
+    &:nth-child(n+2){
+      margin-left: 5px;
+    }
+    &.current {
+      opacity: 1;
+    }
+  }
+  
 }
 
 // section9
@@ -1067,7 +1777,7 @@ nav.globalMenuSp.active {
   &__title {
     text-align: center;
     padding-top: 116px;
-    max-width: 1200px;
+    width: 83%;
     margin: 0 auto;
   }
   &__title h1 {
@@ -1083,12 +1793,6 @@ nav.globalMenuSp.active {
     content: "";
     flex-grow: 1;
   }
-  &__title h1:before {
-    margin-right: 50px;
-  }
-  &__title h1:after {
-    margin-left: 98px;
-  }
   &__accordion {
     width: 77%;
     margin: 0 auto;
@@ -1102,11 +1806,6 @@ nav.globalMenuSp.active {
   &__accordion__contents3 {
     padding-bottom: 109px;
   } 
-  &__accordion span {
-    margin-right: 35px;
-    font-weight: bold;
-    font-size: 24px;
-  }
   &__accordion__container &__accordion__title {
     position: relative;
     margin: 0;
@@ -1117,7 +1816,10 @@ nav.globalMenuSp.active {
     color: #fff;
     cursor: pointer;
   }
-  &__accordion__container &__accordion__title::before {
+  &__accordion__container &__accordion__title:first-child {
+    content: url(img/Q..svg);
+  }
+  &__accordion__container &__accordion__title:first-child::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -1148,11 +1850,83 @@ nav.globalMenuSp.active {
     border: 1px solid #C8CCD0;
   }
 } 
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
 }
-@media screen and (max-width: 768px) and (min-width: 375px) {
-}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
+  .br-sp { 
+    display: block; 
+  }
+  .section9 {
+    margin-top: 56px;
+  
+    &__title {
+      padding-top: 59px;
+      margin: 0 15px;
+    }
+    &__title h1 {
+      font-size: 28px;
+      line-height: 42px;
+      font-weight: normal;
+    }
+    &__accordion {
+      width: 100%;
+    }
+    &__accordion__contents1 {
+      padding-top: 63px;
+    } 
+    &__accordion__contents2 {
+      padding: 28px 0;
+    } 
+    &__accordion__contents3 {
+      padding-bottom: 56px;
+    } 
+    &__accordion__content p {
+      font-size: 14px;
+    }
+    &__accordion__container &__accordion__title {
+      position: relative;
+      margin: 0;
+      padding: 18px 0 22px 47px;
+      background-color: #2196F3;
+      font-size: 14px;
+      line-height: 21px;
+      font-weight: normal;
+      color: #fff;
+      cursor: pointer;
+    }
+    &__accordion__container &__accordion__title::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 32px;
+      width: 20px;
+      height: 3px;
+      /*縦線に*/
+      transform: rotate(90deg);
+      background: #fff;
+      transition: all .3s ease-in-out;
+    }
+    &__accordion__container &__accordion__title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 32px;
+      /*横線*/
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      transition: all .2s ease-in-out;
+    }
+    &__accordion__container &__accordion__title.open::before {
+      transform: rotate(180deg);
+    }
+    &__accordion__content {
+      padding: 18px 0 22px 47px;
+      border: 1px solid #C8CCD0;
+    }
+  } 
 }
 // section10
 .section10 {
@@ -1161,7 +1935,7 @@ nav.globalMenuSp.active {
   &__title {
     text-align: center;
     padding-top: 112px;
-    max-width: 1200px;
+    max-width: 83%;
     margin: 0 auto;
   }
   &__title h1 {
@@ -1287,11 +2061,130 @@ nav.globalMenuSp.active {
     outline: none;
   }
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
 }
-@media screen and (max-width: 768px) and (min-width: 375px) {
-}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
+  .section10 {  
+    &__title {
+      text-align: center;
+      padding-top: 112px;
+      max-width: 83%;
+      margin: 0 auto;
+    }
+    &__title h1 {
+      display: block;
+      align-items: center;
+      font-size: 56px;
+      line-height: 72px;
+      font-weight: normal;
+    }
+    &__title h1:before,
+    &__title h1:after {
+      display: none;
+    }
+    &__contents {
+      display: block;
+      padding: 72px 0 112px 0;
+      width: 86%;
+      margin: 0 auto;
+    }
+    &__left {
+      width: 49%;
+      padding-top: 49px;
+    }
+    &__left h5 {
+      font-size: 24px;
+      line-height: 40px;
+      font-weight: normal;
+      background:linear-gradient(transparent 60%, #FDC77F 0%);
+      width: 90%;
+      margin-bottom: 20px;
+    } 
+    &__left h6 {
+      font-size: 20px;
+      line-height: 36px;
+      font-weight: normal;
+      margin-bottom: 22px;
+    } 
+    &__left p {
+      font-size: 14px;
+      line-height: 30px;
+      font-weight: normal;
+      width: 90%;
+    } 
+    &__right__container {
+      padding: 47px 48px 46px 51px;
+    }
+    &__right {
+      background-color: #F1F2F3;
+      width: 51%;
+    }
+    &__right span {
+      color: #FF0606;
+    }
+    &__kanji label {
+      font-size: 12px;
+    }
+    &__kanji {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__kanji input {
+      width: 180px;
+      height: 44px;
+    }
+    &__katakana label {
+      font-size: 12px;
+    }
+    &__katakana {
+      padding: 10px 0; 
+      display: flex;
+      justify-content: space-between;
+    }
+    &__katakana input {
+      width: 180px;
+      height: 44px;
+    }
+    &__mailaddress label {
+      font-size: 12px;
+    }
+    &__mailaddress {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__mailaddress input {
+      width: 365px;
+      height: 44px;
+    }
+    &__apply__content {
+      padding: 10px 0 31px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__apply__content label {
+      font-size: 12px;
+    }
+    &__apply__content textarea {
+      width: 365px;
+      height: 112px;
+      overflow-y: scroll;
+    }
+    &__btn {
+      display: block;
+      color: white;
+      background-color: #EF5350;
+      border: none;
+      outline: none;
+      border-radius: 14px;
+      font-size: 24px;
+      padding: 19px 72px 19px 63px;
+      margin: 0 auto;
+      cursor: pointer;
+      }
+  }
+
 }
 ::placeholder {
   padding-top: 14px;
@@ -1340,10 +2233,10 @@ nav.globalMenuSp.active {
   }
 
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
 }
-@media screen and (max-width: 768px) and (min-width: 375px) {
-}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
 }
 // footer
@@ -1360,9 +2253,9 @@ footer {
     padding: 22px 0 26px 0;
   }
 }
-@media screen and (max-width: 1024px) and (min-width: 768px) {
+@media screen and (max-width: 1439px) and (min-width: 959px) {
 }
-@media screen and (max-width: 768px) and (min-width: 375px) {
-}
+@media screen and (max-width: 959px) and (min-width: 375px) {
+}  
 @media screen and (max-width: 375px) and (min-width: 320px) {
 }
