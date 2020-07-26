@@ -8,7 +8,7 @@
   <script src="https://kit.fontawesome.com/df3a6f4f16.js" crossorigin="anonymous"></script>
   
 </head>
-<body>
+<body class="h-100">
   <header>
     <div class="container">
       <div class="header__line">
@@ -82,6 +82,75 @@
         </div>
       </div>
     </div>
+    <!-- モーダル（非表示） -->
+  <!-- モーダル表示ボタン -->
+  <div class="content">
+    <a class="js-modal-open" href="">?modal=show</a>
+  </div>
+  <!-- モーダル中身 -->
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+      <div class="modal__content">
+        <div class="modal__logo">
+          <img src="img/modal_logo.svg" alt="">
+        </div>
+        <div class="modal__contens3">
+          <div class="modal__contens-inner">
+            <div class="modal__contents-top">
+              <p>　ポイント１</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div class="modal__contens-inner2">
+            <div class="modal__contents-top">
+              <p>　ポイント２</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+          <div class="modal__contens-inner">
+            <div class="modal__contents-top">
+              <p>　ポイント３</p>
+            </div>
+            <div class="modal__contents">
+              <div class="modal__contents-middle-box">
+                <div class="modal__contents-middle">
+                  <p>タイトル</p>
+                  <p>　タイトル</p>
+                </div>
+                <div class="modal__contens-bottom">
+                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
+                </div>      
+              </div>
+            </div>
+          </div>
+        </div>            
+        <div class="modal__form">
+          <a href="#">無料相談・お申込みはこちら</a>
+        </div>
+        <a class="js-modal-close" href=""><i class="fas fa-times"></i></a>
+      </div><!--modal__inner-->
+  </div><!--modal-->
+  <!-- ここまで -->
 
     <div class="section2">
       <div class="container">
@@ -462,6 +531,7 @@
       <div class="container">
         <div class="section10__title">
           <h1 id="contact__form">無料相談・お申込みフォーム</h1>
+          <h2 id="contact__form-sp">無料相談お申込みフォーム</h2>
         </div>
         <div class="section10__contents">
           <div class="section10__left">
@@ -514,11 +584,61 @@
       </div>
     </div>
 
+    <div class="section10sp">
+      <div class="section10sp__right">
+        <div class="section10sp__right__container">
+          <form >
+            <div class="section10sp__kanji">
+              <div class="section10sp__kanji__name">
+                <label>お名前<span>*</span></label>
+              </div>
+              <div class="section10sp__form">
+                <input type="text" name="name" placeholder="姓" value="">
+              </div>
+              <div class="section10sp__form">
+                <input type="text" name="name" placeholder="名" value="">
+              </div>
+            </div>
+            <div class="section10sp__katakana">
+              <div class="section10sp__katakana__name">
+                <label>お名前（フリガナ）<span>*</span></label>
+              </div>
+              <div class="section10sp__form">
+                <input type="text" name="name" placeholder="セイ" value="">
+              </div>
+              <div class="section10sp__form">
+                <input type="text" name="name" placeholder="メイ" value="">
+              </div>
+            </div>
+            <div class="section10sp__mailaddress">
+              <div class="section10sp__mailaddress__name">
+                <label>メールアドレス<span>*</span></label>
+              </div>
+              <div class="section10sp__form">
+              <input type="text" name="email" placeholder="abcprograming@info.jp" value="">
+             </div>
+            </div>
+            <div class="section10sp__apply__content">
+              <div class="section10sp__apply__content__name">
+                <label>お申込内容<span>*</span></label>
+              </div>
+              <div class="section10sp__form">
+                <textarea name="content" rows="5" placeholder="こちらにご相談内容・お申込み内容をご記入ください。"></textarea>
+                </div>
+            </div>
+            <button class="section10sp__btn" type="submit">無料相談に申込む</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
     <div class="section11">
       <div class="container">
         <div class="section11__contents">
           <div class="section11__title">
-            <p>LINE＠でも無料相談を受付中！友達追加登録はこちらから</p>
+            <p class="section11__title-pc">LINE＠でも無料相談を受付中！<br class="sp">友達追加登録はこちらから</p>
+            <p class="section11__title-sp">LINE＠でも無料相談を受付中！<br class="sp">友達追加登録はこちらから↓↓</p>
           </div>
           <div class="section11__box">
             <p>QRコード</p>
@@ -529,7 +649,7 @@
   </main>
 
   <footer>
-    <h3>Copyright © 2020 , ABCプログラミングスクール</h3>
+    <h3>Copyright © 2020 , <br class="sp">ABCプログラミングスクール</h3>
   </footer>
   
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -543,76 +663,6 @@
       </div>
     </div>   
   </div>
-
-  <!-- モーダル（非表示） -->
-  <!-- モーダル表示ボタン -->
-  <div class="content">
-    <a class="js-modal-open" href="">?modal=show</a>
-  </div>
-  <!-- モーダル中身 -->
-  <div class="modal js-modal">
-    <div class="modal__bg js-modal-close"></div>
-      <div class="modal__content">
-        <div class="modal__logo">
-          <img src="img/modal_logo.svg" alt="">
-        </div>
-        <div class="modal__contens3">
-          <div class="modal__contens-inner">
-            <div class="modal__contents-top">
-              <p>　ポイント１</p>
-            </div>
-            <div class="modal__contents">
-              <div class="modal__contents-middle-box">
-                <div class="modal__contents-middle">
-                  <p>タイトル</p>
-                  <p>　タイトル</p>
-                </div>
-                <div class="modal__contens-bottom">
-                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
-                </div>      
-              </div>
-            </div>
-          </div>
-          <div class="modal__contens-inner2">
-            <div class="modal__contents-top">
-              <p>　ポイント２</p>
-            </div>
-            <div class="modal__contents">
-              <div class="modal__contents-middle-box">
-                <div class="modal__contents-middle">
-                  <p>タイトル</p>
-                  <p>　タイトル</p>
-                </div>
-                <div class="modal__contens-bottom">
-                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
-                </div>      
-              </div>
-            </div>
-          </div>
-          <div class="modal__contens-inner">
-            <div class="modal__contents-top">
-              <p>　ポイント３</p>
-            </div>
-            <div class="modal__contents">
-              <div class="modal__contents-middle-box">
-                <div class="modal__contents-middle">
-                  <p>タイトル</p>
-                  <p>　タイトル</p>
-                </div>
-                <div class="modal__contens-bottom">
-                  <p>ダミーテキストダミーテ<br>キストダミーテキスト</p>
-                </div>      
-              </div>
-            </div>
-          </div>
-        </div>            
-        <div class="modal__form">
-          <a href="#">無料相談・お申込みはこちら</a>
-        </div>
-        <a class="js-modal-close" href=""><i class="fas fa-times"></i></a>
-      </div><!--modal__inner-->
-  </div><!--modal-->
-  <!-- ここまで -->
 
 </body>
 </html>
