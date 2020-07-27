@@ -83,6 +83,7 @@ $(".dot").on("click", function() {
   setSlider = setInterval(slider, 4000);
 });
 
+
 // モーダル
 $(function(){
   $('.js-modal-open').on('click',function(){
@@ -95,12 +96,6 @@ $(function(){
   });
 });
 
-// パラメータ取得
-var params = (new URL(document.location)).searchParams;
-var modal = params.get('modal');
-console.log('modal :', modal);
-  /// => modal : show
-
 // ハンバーガーメニュー
 $(function() {
   $('.hamburger').click(function() {
@@ -112,4 +107,26 @@ $(function() {
           $('.globalMenuSp').removeClass('active');
       }
   });
+  // 閉じるボタンで、メニューもとじさせる
+  $('.globalMenuSp').click(function(){
+    $('.hamburger, .globalMenuSp').removeClass('active');
+  });
 });
+
+// パラメータ取得
+var url   = location.href;
+params    = url.split("?");
+spparams   = params[1].split("&");
+ var paramArray = [];
+
+for ( i = 0; i < spparams.length; i++ ) {
+  vol = spparams[i].split("=");
+  paramArray.push(vol[0]);
+  paramArray[vol[0]] = vol[1];
+}
+// http://www.example.com/?modal=show
+if ( paramArray["modal"] == "show") {
+  alert("show");
+} else {
+  alert("no show");
+}
