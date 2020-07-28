@@ -1645,7 +1645,7 @@ header {
     border: none;
     outline: none;
     padding: 0;
-    background: #FEC28F;
+    background: #BCBCBC;
     cursor: pointer;
     opacity: 0.5;
     -webkit-transition: opacity .4s ease-in-out;
@@ -1655,7 +1655,7 @@ header {
     margin-left: 5px;
   }
   .dot.current {
-    opacity: 1;
+    background: #FEC28F;
   }
 }
 
@@ -1828,7 +1828,7 @@ header {
 }
 
 .section9__accordion {
-  max-width: 77%;
+  width: 77%;
   margin: 0 auto;
 }
 
@@ -1855,13 +1855,9 @@ header {
   cursor: pointer;
 }
 
-.section9__accordion__title h4 {
-  width: 80%;
-}
-
-.section9__accordion__contents1 span, .section9__accordion__contents2 span, .section9__accordion__contents3 span {
-  font-weight: bold;
-  font-size: 20px;
+.section9__accordion-icon::before {
+  content: url(img/Q..svg);
+  padding-right: 30px;
 }
 
 .section9__accordion__container .section9__accordion__title::before {
@@ -1902,10 +1898,73 @@ header {
   border: 1px solid #C8CCD0;
 }
 
-@media screen and (max-width: 959px) and (min-width: 375px) {
+@media screen and (max-width: 959px) and (min-width: 830px) {
   .section9__title h1 {
     font-size: 4.17vw;
     font-weight: normal;
+  }
+}
+
+@media screen and (max-width: 830px) and (min-width: 530px) {
+  .section9__title h1 {
+    font-size: 4.17vw;
+    font-weight: normal;
+  }
+  .section9__accordion__container .section9__accordion__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  .section9__accordion-icon::before {
+    margin: 0 1px 0 0;
+  }
+  .br-sp {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 530px) and (min-width: 375px) {
+  .section9__title h1 {
+    font-size: 4.17vw;
+    font-weight: normal;
+  }
+  .section9__accordion-icon::before {
+    padding-right: 10px;
+  }
+  .section9__accordion__container .section9__accordion__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    font-size: 3.0vw;
+  }
+  .section9__accordion__content {
+    font-size: 3.0vw;
+    padding-left: 68px;
+  }
+  .section9__accordion-icon::before {
+    margin: 0 1px 0 0;
+  }
+  .section9__accordion__container .section9__accordion__title::before {
+    top: 50%;
+    right: 32px;
+    width: 20px;
+    height: 3px;
+  }
+  .section9__accordion__container .section9__accordion__title::after {
+    top: 50%;
+    right: 32px;
+    /*横線*/
+    width: 20px;
+    height: 3px;
+  }
+  .br-sp {
+    display: block;
   }
 }
 
@@ -1930,8 +1989,11 @@ header {
   .section9__title h1:after {
     margin-left: 30px;
   }
+  .section9__accordion-icon::before {
+    padding-right: 10px;
+  }
   .section9__accordion {
-    width: 100%;
+    width: 92%;
     margin: 0 auto;
   }
   .section9__accordion__contents1 {
@@ -1943,13 +2005,22 @@ header {
   .section9__accordion__contents3 {
     padding-bottom: 56px;
   }
-  .section9__accordion__content p {
-    font-size: 14px;
-  }
   .section9__accordion__container .section9__accordion__title {
-    padding: 18px 0 22px 47px;
-    font-size: 14px;
-    line-height: 21px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    font-size: 3.73vw;
+    padding: 20px;
+  }
+  .section9__accordion__content {
+    font-size: 3.73vw;
+    padding-left: 48px;
+  }
+  .section9__accordion-icon::before {
+    margin: 0 1px 0 0;
   }
   .section9__accordion__container .section9__accordion__title::before {
     top: 50%;
@@ -1958,24 +2029,11 @@ header {
     height: 3px;
   }
   .section9__accordion__container .section9__accordion__title::after {
-    content: "";
-    position: absolute;
     top: 50%;
     right: 32px;
     /*横線*/
     width: 20px;
     height: 3px;
-    background: #fff;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
-  }
-  .section9__accordion__container .section9__accordion__title.open::before {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-  .section9__accordion__content {
-    padding: 18px 0 22px 47px;
-    border: 1px solid #C8CCD0;
   }
 }
 

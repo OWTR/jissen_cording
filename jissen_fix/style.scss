@@ -1540,7 +1540,7 @@ header {
     border: none;
     outline: none;
     padding: 0;
-    background: #FEC28F;
+    background: #BCBCBC;
     cursor: pointer;
     opacity: 0.5;
     transition: opacity .4s ease-in-out;
@@ -1548,7 +1548,7 @@ header {
       margin-left: 5px;
     }
     &.current {
-      opacity: 1;
+      background: #FEC28F;
     }
   }
   
@@ -1702,12 +1702,12 @@ header {
     margin-left: 63px;
   }
   &__accordion {
-    max-width: 77%;
+    width: 77%;
     margin: 0 auto;
   }
   &__accordion__contents1 {
     padding-top: 62px;
-  } 
+  }
   &__accordion__contents2 {
     padding: 32px 0;
   } 
@@ -1724,13 +1724,10 @@ header {
     color: #fff;
     cursor: pointer;
   }
-  &__accordion__title h4 {
-    width: 80%;;
+  &__accordion-icon::before {
+    content: url(img/Q..svg);
+    padding-right: 30px;
   }
-  &__accordion__contents1 span, &__accordion__contents2 span, &__accordion__contents3 span {
-    font-weight: bold;
-    font-size: 20px;
-  } 
   &__accordion__container &__accordion__title::before {
     content: "";
     position: absolute;
@@ -1764,7 +1761,8 @@ header {
 } 
 // @media screen and (max-width: 1439px) and (min-width: 959px) {
 // }
-@media screen and (max-width: 959px) and (min-width: 375px) {
+// レイアウトが崩れるため追加
+@media screen and (max-width: 959px) and (min-width: 830px) {
   .section9 {
     &__title h1 {
       font-size: 4.17vw;
@@ -1772,6 +1770,65 @@ header {
     }
   }
 }  
+// レイアウトが崩れるため追加
+@media screen and (max-width: 830px) and (min-width: 530px) {
+  .section9 {
+    &__title h1 {
+      font-size: 4.17vw;
+      font-weight: normal;
+    }
+    &__accordion__container &__accordion__title {
+      display: flex;
+      align-items: baseline;
+    }
+    &__accordion-icon::before {
+      margin: 0 1px 0 0;      
+    }
+  }
+  .br-sp {
+    display: block;
+  }
+}  
+// レイアウトが崩れるため追加
+@media screen and (max-width: 530px) and (min-width: 375px) {
+  .section9 {
+    &__title h1 {
+      font-size: 4.17vw;
+      font-weight: normal;
+    }
+    &__accordion-icon::before {
+      padding-right: 10px;
+    }
+    &__accordion__container &__accordion__title {
+      display: flex;
+      align-items: baseline;
+      font-size: 3.0vw;
+    }
+    &__accordion__content {
+      font-size: 3.0vw;
+      padding-left: 68px;
+    }
+    &__accordion-icon::before {
+      margin: 0 1px 0 0;      
+    }
+    &__accordion__container &__accordion__title::before {
+      top: 50%;
+      right: 32px;
+      width: 20px;
+      height: 3px;
+    }
+    &__accordion__container &__accordion__title::after {
+      top: 50%;
+      right: 32px;
+      /*横線*/
+      width: 20px;
+      height: 3px;
+    }
+  }
+  .br-sp {
+    display: block;
+  }
+}
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .br-sp { 
     display: block; 
@@ -1793,8 +1850,11 @@ header {
     &__title h1:after {
       margin-left: 30px;
     }
+    &__accordion-icon::before {
+      padding-right: 10px;
+    }
     &__accordion {
-      width: 100%;
+      width: 92%;
       margin: 0 auto;
     }
     &__accordion__contents1 {
@@ -1806,13 +1866,18 @@ header {
     &__accordion__contents3 {
       padding-bottom: 56px;
     } 
-    &__accordion__content p {
-      font-size: 14px;
-    }
     &__accordion__container &__accordion__title {
-      padding: 18px 0 22px 47px;
-      font-size: 14px;
-      line-height: 21px;
+      display: flex;
+      align-items: baseline;
+      font-size: 3.73vw;
+      padding: 20px;
+    }
+     &__accordion__content {
+      font-size: 3.73vw;
+      padding-left: 48px;
+    }
+    &__accordion-icon::before {
+      margin: 0 1px 0 0;      
     }
     &__accordion__container &__accordion__title::before {
       top: 50%;
@@ -1821,22 +1886,11 @@ header {
       height: 3px;
     }
     &__accordion__container &__accordion__title::after {
-      content: "";
-      position: absolute;
       top: 50%;
       right: 32px;
       /*横線*/
       width: 20px;
       height: 3px;
-      background: #fff;
-      transition: all .2s ease-in-out;
-    }
-    &__accordion__container &__accordion__title.open::before {
-      transform: rotate(180deg);
-    }
-    &__accordion__content {
-      padding: 18px 0 22px 47px;
-      border: 1px solid #C8CCD0;
     }
   } 
 }
