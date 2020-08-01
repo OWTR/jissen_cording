@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import "./variables.scss";
 
 // 共通部分
 body {
@@ -65,7 +66,7 @@ header {
   &__form a {
   display: block;
   color: white;
-  background-color: #EF5350;
+  background: $main_Red;
   border-radius: 14px;
   font-size: 1.111vw;
   padding: 9px 21px;
@@ -253,7 +254,7 @@ header {
     display : block;
     position: fixed;
     z-index : 33;
-    right : 13px;
+    right : 23px;
     top   : 3px;
     width : 40px;
     height: 40px;
@@ -415,8 +416,8 @@ header {
   }
 }
 
-/* section1 */
-.section1 { 
+/* part1 */
+.part1 { 
   width: 100%;
 
   &__wrapper__right-sp {
@@ -434,7 +435,7 @@ header {
   &__wrapper__right img {
     max-width: 100%;
   }
-  &__contents h3 {
+  &__contents h1 {
     font-size: 2.22vw;
     font-weight: normal;
     white-space: nowrap;
@@ -447,7 +448,7 @@ header {
   &__form a {
     white-space: nowrap;
     color: white;
-    background-color: #EF5350;
+    background-color: $main_Red;
     border-radius: 20px;
     font-size: 1.66vw;
     padding: 40px 128px 40px 84px;
@@ -469,7 +470,7 @@ header {
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section1 {
+  .part1 {
     &__wrapper__left {
       margin: 70px 100px 0px 100px; 
     }
@@ -480,7 +481,7 @@ header {
 }
 // バランス考慮で追加
 @media screen and (max-width: 959px) and (min-width: 690px) {
-  .section1 { 
+  .part1 { 
     &__wrapper__left {
       margin: 60px; 
     }
@@ -502,7 +503,7 @@ header {
 }
 // バランス考慮で追加
 @media screen and (max-width: 690px) and (min-width: 375px) {
-  .section1 { 
+  .part1 { 
     &__wrapper { 
       flex-direction: column-reverse;
     }
@@ -516,41 +517,41 @@ header {
       margin: 0 auto;
       text-align: left;
       }
-      &__wrapper { 
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      }
-      &__contents h2 {
-        font-size: 25px;
-        line-height: 39px;
-      }
-      &__contents h3 {
-        font-size: 21px;
-        padding: 30px 0 14px 0;
-      }
-      &__form a {
-        white-space: nowrap;
-        font-size: 15px;
-        padding: 20px;
-        margin-top: 0;
-        width: 70%;
-      }
-      &__form {
-        padding-top: 18px;
-        text-align: center;
-      }
-      &__last p {
-        font-size: 12px;
-        line-height: 32px;  
-      }
+    &__wrapper { 
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    &__contents h2 {
+      font-size: 25px;
+      line-height: 39px;
+    }
+    &__contents h3 {
+      font-size: 21px;
+      padding: 30px 0 14px 0;
+    }
+    &__form a {
+      white-space: nowrap;
+      font-size: 15px;
+      padding: 20px;
+      margin-top: 0;
+      width: 70%;
+    }
+    &__form {
+      padding-top: 18px;
+      text-align: center;
+    }
+    &__last p {
+      font-size: 12px;
+      line-height: 32px;  
+    }
   }
 }
 @media screen and (max-width: 375px) and (min-width: 320px) {
   .contents-header {
     padding-top: 40px;
   }
-  .section1 { 
+  .part1 { 
     &__wrapper { 
       flex-direction: column-reverse;
     }
@@ -569,12 +570,12 @@ header {
         margin: 0 auto;
         text-align: center;
       }
-      &__contents h2 {
+      &__contents p {
         font-size: 6.756vw;
         line-height: 39px;
         text-align: center;
       }
-      &__contents h3 {
+      &__contents h1 {
         font-size: 21px;
         padding: 30px 0 14px 0;
         text-align: center;
@@ -601,18 +602,18 @@ header {
   }
 }  
 
-// section2
-.section2 {
+// part2
+.part2 {
   width: 100%;
 
   &__topMessage {
-    margin-top: 112px;
+    margin-top: $pc_margin-top;
   }
-  &__topMessage h3 {
+  &__topMessage h1 {
     font-size: 24px;
     line-height: 40px;
     font-weight: normal;
-    background:linear-gradient(transparent 50%, #AECFEF 0%);
+    background:linear-gradient(transparent 50%, $underline_blue 0%);
     width: 27%;
     margin-left: 552px;
     margin-bottom: 67px;
@@ -630,8 +631,8 @@ header {
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section2 { 
-    &__topMessage h3 {
+  .part2 { 
+    &__topMessage h1 {
       font-size: 24px;
       line-height: 40px;
       margin: 0 auto;
@@ -648,11 +649,11 @@ header {
   }
 }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section2 { 
+  .part2 { 
     &__topMessage {
       margin-top: 62px;
     }
-    &__topMessage h3 {
+    &__topMessage h1 {
       font-size: 20px;
       line-height: 40px;
       margin: 0 auto;
@@ -669,11 +670,11 @@ header {
   }
 }  
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section2 {
+  .part2 {
     &__topMessage {
-      margin-top: 62px;
+      margin-top: $sp_margin-top;
     }
-    &__topMessage h3 {
+    &__topMessage h1 {
       white-space: nowrap;
       font-size: 5.66vw;
       line-height: 35px;
@@ -690,15 +691,15 @@ header {
     }
   }
 }
-// section3
-.section3 {
+// part3
+.part3 {
   width: 100%;
   background: -moz-linear-gradient(left, #62B5FE, #FFF);
   background: -webkit-linear-gradient(left, #62B5FE, #FFF);
   background: linear-gradient(to right, #62B5FE, #FFF);
   
   &__commonBox {
-    margin-top: 112px;
+    margin-top: $pc_margin-top;
     padding: 53px 0 51px 231px;
     max-width: 100%;
   }
@@ -707,10 +708,11 @@ header {
     font-weight: normal;
     white-space: nowrap;
     max-width: 100%;
+    text-align: left;
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section3 {
+  .part3 {
     &__commonBox {
       padding: 53px 0 51px 131px;
     }
@@ -720,12 +722,10 @@ header {
   }
 }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section3 {
+  .part3 {
     &__commonBox {
-      padding: 20px 0;
+      padding: 20px 40px;
       margin-top: 62px;
-      text-align: center;
-      width: 100%;
     }
     &__commonBox h1 {
       font-size: 3.6vw;
@@ -733,7 +733,7 @@ header {
   }
 }
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section3 {
+  .part3 {
     &__commonBox {
       margin-top: 56px;
       padding: 18px 0 15px 18px;
@@ -745,28 +745,22 @@ header {
   }
 }
 
-// section4
-.section4 {
+// part4
+.part4 {
   width: 100%;
 
   &__title {
     text-align: center;
-    margin-top: 112px;
+    margin-top: $pc_margin-top;
   }
-  &__title h1, h2 {
+  &__title h1 {
+    display: inline;
     font-size: 3.88vw;
     line-height: 72px;
     font-weight: normal;
-    background:linear-gradient(transparent 50%, #FED8A6 0%);
+    background:linear-gradient(transparent 60%, $underline_yellow 0%);
     text-align: center;
-    display: inline-block;
     white-space: nowrap;
-  }
-  &__title h1 {
-    width: 67%;
-  }
-  &__title h2 {
-    width: 80%;
   }
   &__title__contents {
     margin: 64px 168px 112px 168px;
@@ -790,7 +784,7 @@ header {
   &__title__coment02 {
     margin-right: 70px;
   }
-  &__title__Top h3 {
+  &__title__Top h2 {
     font-weight: normal;
     font-size: 24px;  
     line-height: 40px;
@@ -805,7 +799,7 @@ header {
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section4 {
+  .part4 {
     &__title__contents {
       margin: 64px 68px 112px 68px;
       text-align: center;
@@ -828,7 +822,7 @@ header {
     &__title__coment02 {
       margin-right: 70px;
     }
-    &__title__Top h3 {
+    &__title__Top h2 {
       font-weight: normal;
       font-size: 24px;  
       line-height: 40px;
@@ -844,14 +838,14 @@ header {
   }
 }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section4 {
+  .part4 {
     &__title {
       margin: 59px 0;
     }
-    &__title h1, h2 {
+    &__title h1 {
       font-size: 3.88vw;
       // 本来は21px
-      line-height: 55px;
+      line-height: 45px;
       white-space: nowrap;
       text-align: left;
     }
@@ -869,7 +863,7 @@ header {
     &__title__coment02 {
       margin-right: 0px;
     }
-    &__title__Top h3 {
+    &__title__Top h2 {
       font-size: 21px;  
       line-height: 63px;
       margin-left: 15px;
@@ -885,11 +879,11 @@ header {
   }
 }  
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section4 {
+  .part4 {
     &__title {
       margin: 59px 0;
     }
-    &__title h1, h2 {
+    &__title h1 {
       font-size: 4.324vw;
       // 本来は21px
       line-height: 35px;
@@ -910,7 +904,7 @@ header {
     &__title__coment02 {
       margin-right: 0px;
     }
-    &__title__Top h3 {
+    &__title__Top h2 {
       font-size: 21px;  
       line-height: 63px;
       margin-left: 15px;
@@ -926,8 +920,8 @@ header {
   }
 }
 
-// section5
-.section5 {
+// part5
+.part5 {
   width: 100%;
   background: -moz-linear-gradient(left, #62B5FE, #FFF);
   background: -webkit-linear-gradient(left, #62B5FE, #FFF);
@@ -936,12 +930,12 @@ header {
   &__commonBox {
     text-align: center;
   }
-  &__commonBox p {
+  &__commonBox h4 {
     font-size: 16px;
     font-weight: normal;
     padding: 53px 0 24px 0;
   }
-  &__commonBox h3 {
+  &__commonBox p {
     font-size: 24px;
     line-height: 40px;
     font-weight: normal;
@@ -951,32 +945,33 @@ header {
   &__form {
     width: 40%;
     display: inline-block;
+    position: relative;
   }
   &__form a {
     display: block;
     color: white;
-    background-color: #EF5350;
+    background-color: $main_Red;
     border-radius: 14px;
     font-size: 24px;
     padding: 24px 206px 24px 80px;
     margin-bottom: 48px;
-    position: relative;
+    
     white-space: nowrap;
   }
   &__form a::after {
-    content: url(img/yajirushi.svg);
+    content: url(./../img/yajirushi.svg);
     position: absolute;
     right: 20%;
     bottom: 25%;
     width: 14px;
-    height: 40px;
+    height: 75px;
   }
   &__form a:hover {
     box-shadow : 0px 8px 8px #878787;
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section5 {
+  .part5 {
     &__form {
       width: 45%;
     }
@@ -986,14 +981,14 @@ header {
   }
 }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section5 {
+  .part5 {
     &__form {
       width: 350px;
     }
-    &__commonBox p {
+    &__commonBox h4 {
       font-size: 12px;
     }
-    &__commonBox h3 {
+    &__commonBox p {
       font-size: 20px;
     }
     &__form a {
@@ -1001,19 +996,19 @@ header {
       font-size: 20px;
     }
     &__form a::after {
-      bottom: 15%;
+      height: 65px;
     }
   }
 }  
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section5 {
-    &__commonBox p {
+  .part5 {
+    &__commonBox h4 {
       font-size: 10px;
       line-height: 14px;
       padding: 29px 0 15px 0;
       margin-top: 59px;
     }
-    &__commonBox h3 {
+    &__commonBox p {
       font-size: 14px;
       line-height: 6px;
     }
@@ -1029,7 +1024,7 @@ header {
       margin: 0 15px;
     }
     &__form a::after {
-      content: url(img/yajirushi_sp.svg);
+      content: url(./../img/yajirushi_sp.svg);
       right: 10%;
       bottom: 12%;
       width: 20px;
@@ -1037,23 +1032,24 @@ header {
     }
   }
 }
-// section6
-.section6 {
+// part6
+.part6 {
   width: 100%;
 
   &__title-sp {
     display: none;
   }
   &__title {
-    margin: 112px 0 72px 0 ;
+    margin-top: $pc_margin-top;
+    margin-bottom:72px;
     text-align: center;
   }
-  &__title h2 {
+  &__title h1 {
     font-size: 3.88vw;
     line-height: 72px;
     width: 68%;
     font-weight: normal;
-    background:linear-gradient(transparent 60%, #FED8A6 0%);
+    background:linear-gradient(transparent 60%, $underline_yellow 0%);
     text-align: left;
     display: inline-block;
     white-space: nowrap;
@@ -1062,7 +1058,7 @@ header {
     display: flex;
     margin: 0 0 48px 224px;
   }
-  &__contents01 h3 {
+  &__contents01 h2 {
     font-size: 24px;
     line-height: 40px;
     margin-bottom: 21px;
@@ -1077,7 +1073,7 @@ header {
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section6 {
+  .part6 {
     &__contents {
       margin: 0 0 48px 174px;
     }
@@ -1085,7 +1081,7 @@ header {
 }
 // 入りきらず追加
 @media screen and (max-width: 959px) and (min-width: 750px) {
-  .section6 {
+  .part6 {
     &__title {
       margin-top: 62px;
     }
@@ -1096,18 +1092,18 @@ header {
 }  
 // 入りきらず追加
 @media screen and (max-width: 750px) and (min-width: 375px) {
-  .section6 {  
-    &__title h2 {
+  .part6 {  
+    &__title h1 {
       line-height: 42px;
     }
     &__title {
-      margin-top: 62px;
+      margin-top: $sp_margin-top;
     }
     &__contents {
       display: block;
       margin: 0 30px;
     }
-    &__contents01 h3 {
+    &__contents01 h2 {
       font-size: 21px;
       line-height: 35px;
       margin-bottom: 21px;
@@ -1131,7 +1127,7 @@ header {
   }
 }
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section6 {  
+  .part6 {  
     &__title-sp {
       display: block;
       margin-left: 37px;
@@ -1140,27 +1136,19 @@ header {
     &__title {
       display: none;
     }
-    &__title-sp h2 {
+    &__title-sp h1 {
       font-size: 18px;
-      line-height: 40px;
+      line-height: 30px;
       font-weight: normal;
-      width: 20%;
-      background:linear-gradient(transparent 60%, #FED8A6 0%);
-      white-space: nowrap;
-    }
-    &__title-sp h3 {
-      font-size: 18px;
-      line-height: 40px;
-      font-weight: normal;
-      width: 90%;
-      background:linear-gradient(transparent 60%, #FED8A6 0%);
+      display: inline;
+      background:linear-gradient(transparent 60%, $underline_yellow 0%);
       white-space: nowrap;
     }
     &__contents {
       display: block;
       margin: 0 15px;
     }
-    &__contents01 h3 {
+    &__contents01 h2 {
       font-size: 21px;
       line-height: 35px;
       margin-bottom: 21px;
@@ -1179,14 +1167,14 @@ header {
     }
   }
 }
-// section7
-.section7 {
+// part7
+.part7 {
   width: 100%;
   background-color: #EFF8FF;
 
   &__title {
     text-align: center;
-    padding-top: 112px;
+    padding-top: $pc_margin-top;
     width: 83%;
     margin: 0 auto;
     margin-top: 71px;
@@ -1227,13 +1215,14 @@ header {
     text-align: center;
     margin: 34px 0 33px 0;
   }
-  &__contents__title p {
+  &__contents__title h2 {
     font-size: 20px;
     line-height: 36px;
-    background:linear-gradient(transparent 45%, #8FCAF9 0%);
+    background:linear-gradient(transparent 45%, $underline_blue 0%);
     width: 180px;
     display: inline-block;
     white-space: nowrap;
+    font-weight: normal;
   }
   &__contents__discription {
     margin: 33px;
@@ -1257,7 +1246,7 @@ header {
 // }
 // バランス考慮でwidth修正
 @media screen and (max-width: 800px) and (min-width: 375px) {
-  .section7 {
+  .part7 {
     &__title {
       padding-top: 59px;
       width: 90%;
@@ -1289,7 +1278,7 @@ header {
       text-align: center;
       padding-top: 30px;
     }
-    &__contents__title p {
+    &__contents__title h2 {
       font-size: 17px;
       line-height: 35px;
       width: 130px;  
@@ -1306,7 +1295,7 @@ header {
   }  
 } 
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section7 {
+  .part7 {
     &__title {
       padding-top: 59px;
       width: 90%;
@@ -1354,8 +1343,8 @@ header {
     } 
   }  
 }
-// section8
-.section8 {
+// part8
+.part8 {
   width: 100%;
 
   &__tab {
@@ -1373,14 +1362,14 @@ header {
     cursor: pointer;
   }
   &__tab-active {
-  background: linear-gradient(transparent 50%, #FDC77F 0%);
+  background: linear-gradient(transparent 50%, $underline_yellow 0%);
   }
   &__slider {
     display: none;
   }
   &__title {
     text-align: center;
-    padding-top: 112px;
+    padding-top: $pc_margin-top;
     width: 83%;
     margin: 0 auto;
   }
@@ -1437,7 +1426,7 @@ header {
 // @media screen and (max-width: 1439px) and (min-width: 959px) {
 // }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section8 {
+  .part8 {
     &__title h1 {
       font-size: 4.17vw;
     }
@@ -1517,10 +1506,10 @@ header {
     cursor: pointer;
     opacity: .4;
     &.prev {
-      background-image: url(img/左ボタン.svg);
+      background-image: url(./../img/左ボタン.svg);
     }
     &.next {
-      background-image: url(img/右ボタン.svg);
+      background-image: url(./../img/右ボタン.svg);
     }
     &:hover {
       opacity: .8;
@@ -1548,13 +1537,13 @@ header {
       margin-left: 5px;
     }
     &.current {
-      background: #FEC28F;
+      background: $underline_yellow;
     }
   }
   
 }  
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section8 {
+  .part8 {
     &__title h1 {
       font-size: 7.77vw;
     }
@@ -1633,10 +1622,10 @@ header {
     cursor: pointer;
     opacity: .4;
     &.prev {
-      background-image: url(img/左ボタン.svg);
+      background-image: url(./../img/左ボタン.svg);
     }
     &.next {
-      background-image: url(img/右ボタン.svg);
+      background-image: url(./../img/右ボタン.svg);
     }
     &:hover {
       opacity: .8;
@@ -1670,15 +1659,15 @@ header {
   
 }
 
-// section9
-.section9 {
+// part9
+.part9 {
   width: 100%;
   background-color: #EFF8FF;
   margin-top: 96px;
 
   &__title {
     text-align: center;
-    padding-top: 116px;
+    padding-top: $pc_margin-top;
     width: 83%;
     margin: 0 auto;
   }
@@ -1725,7 +1714,7 @@ header {
     cursor: pointer;
   }
   &__accordion-icon::before {
-    content: url(img/Q..svg);
+    content: url(./../img/Q..svg);
     padding-right: 30px;
   }
   &__accordion__container &__accordion__title::before {
@@ -1763,7 +1752,7 @@ header {
 // }
 // レイアウトが崩れるため追加
 @media screen and (max-width: 959px) and (min-width: 830px) {
-  .section9 {
+  .part9 {
     &__title h1 {
       font-size: 4.17vw;
       font-weight: normal;
@@ -1772,7 +1761,7 @@ header {
 }  
 // レイアウトが崩れるため追加
 @media screen and (max-width: 830px) and (min-width: 530px) {
-  .section9 {
+  .part9 {
     &__title h1 {
       font-size: 4.17vw;
       font-weight: normal;
@@ -1791,7 +1780,7 @@ header {
 }  
 // レイアウトが崩れるため追加
 @media screen and (max-width: 530px) and (min-width: 375px) {
-  .section9 {
+  .part9 {
     &__title h1 {
       font-size: 4.17vw;
       font-weight: normal;
@@ -1833,11 +1822,11 @@ header {
   .br-sp { 
     display: block; 
   }
-  .section9 {
+  .part9 {
     margin-top: 56px;
   
     &__title {
-      padding-top: 59px;
+      padding-top: $sp_margin-top;
     }
     &__title h1 {
       font-size: 28px;
@@ -1858,7 +1847,7 @@ header {
       margin: 0 auto;
     }
     &__accordion__contents1 {
-      padding-top: 63px;
+      padding-top: $sp_margin-top;
     } 
     &__accordion__contents2 {
       padding: 28px 0;
@@ -1894,17 +1883,17 @@ header {
     }
   } 
 }
-// section10
-.section10 {
+// part10
+.part10 {
   width: 100%;
 
   &__title {
     text-align: center;
-    padding-top: 112px;
+    padding-top: $pc_margin-top;
     max-width: 83%;
     margin: 0 auto;
   }
-  &__title h2 {
+  &__title-sp {
     display: none;
   }
   &__title h1 {
@@ -1942,7 +1931,7 @@ header {
     font-size: 24px;
     line-height: 40px;
     font-weight: normal;
-    background:linear-gradient(transparent 60%, #FDC77F 0%);
+    background:linear-gradient(transparent 60%, $underline_yellow 0%);
     width: 90%;
     margin-bottom: 20px;
   } 
@@ -1966,7 +1955,7 @@ header {
     width: 51%;
   }
   &__right span {
-    color: #FF0606;
+    color: $main_Red;
   }
   &__kanji label {
     font-size: 12px;
@@ -2022,7 +2011,7 @@ header {
   &__btn {
     display: block;
     color: white;
-    background-color: #EF5350;
+    background-color: $main_Red;
     border: none;
     outline: none;
     border-radius: 14px;
@@ -2037,7 +2026,7 @@ header {
   }
 }
 @media screen and (max-width: 1439px) and (min-width: 959px) {
-  .section10 {
+  .part10 {
     &__right__container {
       padding: 30px;
       text-align: center;
@@ -2080,7 +2069,7 @@ header {
   }
 }
 @media screen and (max-width: 959px) and (min-width: 375px) {
-  .section10 {
+  .part10 {
     &__title h1 {
       display: flex;
       align-items: center;
@@ -2182,7 +2171,7 @@ header {
   }
 }  
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section10 {
+  .part10 {
     &__title {
       padding-top: 59px;
       padding-bottom: 60px;
@@ -2191,12 +2180,15 @@ header {
     &__title h1 {
       display: none;
     }
-    &__title h2 {
-    display: block;
+    &__title-sp {
+      display: block;
+      max-width: 95%;
+      margin: 60px 20px;
+    }
+    &__title-sp h1 {
     white-space: nowrap;
     font-weight: normal;
     font-size: 7.56vw;
-    width: 100%;
     }
     &__contents {
       display: block;
@@ -2235,8 +2227,8 @@ header {
   color: #707070;
   font-size: 12px;
 }
-// section10sp
-.section10sp {
+// part10sp
+.part10sp {
   display: none;
 
   &__right__container {
@@ -2319,7 +2311,7 @@ header {
 }
 
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section10sp {
+  .part10sp {
   display: block;
 
   &__right__container {
@@ -2394,8 +2386,8 @@ header {
   }
 }
 
-// section11
-.section11 {
+// part11
+.part11 {
   width: 100%;
   background-color: #B4D8F8;
   position: relative;
@@ -2446,7 +2438,7 @@ header {
 // @media screen and (max-width: 1439px) and (min-width: 959px) {
 // }
 @media screen and (max-width: 959px) and (min-width: 583px) {
- .section11 {
+ .part11 {
     &__title p {
       font-size: 20px;
       white-space: nowrap;
@@ -2461,7 +2453,7 @@ header {
 }  
 // レイアウトが崩れるため追加
 @media screen and (max-width: 583px) and (min-width: 375px) {
-  .section11 {
+  .part11 {
     &__title p {
       font-size: 21px;
       line-height: 40px;
@@ -2495,7 +2487,7 @@ header {
   } 
 }
 @media screen and (max-width: 375px) and (min-width: 320px) {
-  .section11 {
+  .part11 {
     &__title p {
       font-size: 5.6vw;
       line-height: 40px;
@@ -2586,7 +2578,7 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  background:#EF5350;
+  background:$main_Red;
   font-size: 19px;
   line-height: 26px;
   padding: 14px 0;
@@ -2594,7 +2586,7 @@ footer {
 .footer_fix_btn a {
   display: block;
   color: white;
-  width: 100%;
+  max-width: 100%;
   text-decoration: none;
 }
 .footer_fix_btn a:hover {
@@ -2603,9 +2595,9 @@ footer {
 }
 
 // モーダル
-.content {
-  display: none;
-}
+// .content {
+//   display: none;
+// }
 .modal__content {
   margin: 0 auto;
   padding: 40px;
@@ -2638,7 +2630,7 @@ footer {
 .modal__form a {
   display: block;
   color: white;
-  background-color: #EF5350;
+  background-color: $main_Red;
   border-radius: 14px;
   font-size: 24px;
   padding: 27px 0 27px 84px; 

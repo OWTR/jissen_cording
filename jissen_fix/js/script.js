@@ -1,4 +1,4 @@
-// ハンバーガーメニュー
+// ◆ハンバーガーメニュー
 $(function() {
   $('.hamburger').click(function() {
       $(this).toggleClass('active');
@@ -13,12 +13,9 @@ $(function() {
   $('.globalMenuSp').click(function(){
     $('.hamburger, .globalMenuSp').removeClass('active');
   });
-});
 
-// アコーディオン
-$(function () {
-  //中のコンテンツを隠す
-  $(".section9__accordion__content").css("display", "none");
+  // ◆アコーディオン
+  $(".part9__accordion__content").css("display", "none");
   //タイトルがクリックされたら
   $(".js__accordion__title").click(function () {
     //クリックしたjs-accordion-title以外の全てのopenを取る
@@ -30,11 +27,9 @@ $(function () {
     //thisのcontentを展開、開いていれば閉じる
     $(this).next().slideToggle(300);
   });
-});
 
-// 追従ボタン
-$(function() {
-  var topBtn = $('.following');
+  // ◆追従ボタン
+  const topBtn = $('.following');
   //ボタンを非表示にする
   topBtn.hide();
   //スクロールしてページトップから500に達したらボタンを表示
@@ -47,22 +42,38 @@ $(function() {
   topBtn.fadeOut();
   }
   });
-});
 
-// ページ内リンク移動
-$(function(){
+  // ◆ページ内リンク移動
   $('a[href^="#"]').click(function(){
-    var speed = 400;
-    var href= $(this).attr("href");
-    var target = $(href == "#" || href == "" ? 'html' : href);
+    const speed = 400;
+    const href= $(this).attr("href");
+    const target = $(href == "#" || href == "" ? 'html' : href);
     //ヘッダーの高さを取得
-    var header = $('header').height();
+    const header = $('header').height();
     //ヘッダーの高さを引く
-    var position = target.offset().top - header;
+    const position = target.offset().top - header;
     $("html, body").animate({scrollTop:position}, speed, "swing");
     return false;
   });
+
+  // ◆モーダル
+$(function(){
+  $('.js-modal-open').on('click',function(){
+      $('.js-modal').fadeIn();
+      return false;
+  });
+  $('.js-modal-close').on('click',function(){
+      $('.js-modal').fadeOut();
+      return false;
+  });
 });
+
+
+// 以下、$(function(){ 内には入れていないが、入れることはできるのか？
+// ◆パラメータ取得
+var search=Object.fromEntries(new URLSearchParams(location.search.substring(1)));
+console.log(search['modal']||null);
+
 
 // スライダー
 function slider(condition) {
@@ -99,38 +110,4 @@ $(".dot").on("click", function() {
   slider(index);
   setSlider = setInterval(slider, 4000);
 });
-
-
-// モーダル
-$(function(){
-  $('.js-modal-open').on('click',function(){
-      $('.js-modal').fadeIn();
-      return false;
-  });
-  $('.js-modal-close').on('click',function(){
-      $('.js-modal').fadeOut();
-      return false;
-  });
 });
-
-// パラメータ取得
-// window.location.search = "?modal=show";
-
-function getUrlQueries() {
-  var queryStr = window.location.search.slice(1);  // 文頭?を除外
-      queries = {};
-
-  // クエリがない場合は空のオブジェクトを返す
-  if (!queryStr) {
-    return queries;
-  }
-
-  // クエリ文字列を & で分割して処理
-  queryStr.split('&').forEach(function(queryStr) {
-    // = で分割してkey,valueをオブジェクトに格納
-    var queryArr = queryStr.split('=');
-    queries[queryArr[0]] = queryArr[1];
-  });
-
-  return queries;
-}
